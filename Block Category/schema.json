@@ -1,0 +1,238 @@
+[
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Card 1",
+        "settings": [
+          {
+            "type": "input",
+            "id": "cardurl",
+            "label": "Card 1 link",
+            "default": "/"
+          },
+          {
+            "type": "imageManager",
+            "id": "cardimage",
+            "label": "Card 1 Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/buyplastic.png?t=1756379064",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "input",
+            "id": "cardTitle",
+            "label": "Card 1 Title",
+            "default": "BUY PLASTIC"
+          },
+          {
+            "type": "input",
+            "id": "cardsubTitle",
+            "label": "Card 1 Sub Title",
+            "default": "Explore the materials we offer"
+          },
+          {
+            "type": "text",
+            "id": "cardsubTitlediscription",
+            "label": "Card 1 Discription",
+            "default": "Explore the materials we offer"
+          },
+          {
+            "type": "color",
+            "id": "card1arrowpngcolor",
+            "label": "Arrow Color",
+            "default": "#0000"
+          },          
+          {
+            "type": "color",
+            "id": "card1TitleColor",
+            "label": "Card 1 Title Text Color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "card1TitleColorHover",
+            "label": "Card 1 Title Text Hover Color",
+            "default": "#000000"
+          }
+        ]
+      },
+      {
+        "label": "Card 2",
+        "settings": [      
+          {
+            "type": "input",
+            "id": "cardurl2",
+            "label": "Card 2 link",
+            "default": "/"
+          },
+           {
+            "type": "imageManager",
+            "id": "cardimage2",
+            "label": "Card 2 Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/fabrication.png?t=1756379452",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "input",
+            "id": "card2Title",
+            "label": "Card 2 Title",
+            "default": "BUY PLASTIC"
+          },
+          {
+            "type": "input",
+            "id": "card2subTitle",
+            "label": "Card 2 Sub Title",
+            "default": "BUY PLASTIC"
+          },
+          {
+            "type": "text",
+            "id": "card2discription",
+            "label": "Card 2 Discription",
+            "default": "BUY PLASTIC"
+          },
+          {
+            "type": "color",
+            "id": "card2arrowpngcolor",
+            "label": "Arrow Color",
+            "default": "#0000"
+          },    
+          {
+            "type": "color",
+            "id": "card2TitleColor",
+            "label": "Card 2 Title Text Color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "card2TitleColorHover",
+            "label": "Card 2 Title Hover Text Color",
+            "default": "#fff"
+          }
+        ]
+      },
+      {
+        "label": "Card 3",
+        "settings": [         
+         {
+            "type": "input",
+            "id": "cardurl3",
+            "label": "Card link",
+            "default": "/"
+          },
+          {
+            "type": "imageManager",
+            "id": "cardimage3",
+            "label": "Card 3 Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/resources.png?t=1756379492",
+              "type": "IMAGE_MANAGER"
+            }
+          },          
+          {
+            "type": "color",
+            "id": "card3arrowpngcolor",
+            "label": "Arrow Color",
+            "default": "#0000"
+          }, 
+          {
+            "type": "input",
+            "id": "card3Title",
+            "label": "Card 3 Title",
+            "default": "RESOURCES"
+          },
+            {
+            "type": "input",
+            "id": "card3subTitle",
+            "label": "Card 3 Sub Title",
+            "default": "Explore insights, tools, and expertise."
+          },
+          {
+            "type": "text",
+            "id": "card3discription",
+            "label": "Card 3 Description",
+            "default": "Explore insights, tools, and expertise."
+          },
+          {
+            "type": "color",
+            "id": "card3TitleColor",
+            "label": "Card 3 Title Text Color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "card3TitleColoHover",
+            "label": "Card 3 Title Text Hover Color",
+            "default": "#000000"
+          }
+
+        ]
+      },
+      {
+        "label": "Card Title Font Sizes",
+        "settings": [
+          {
+            "type": "number",
+            "id": "font_size_text",
+            "label": "Title Font Size",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "Title_font_size_texTab",
+            "label": "Title Tab Font Size",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "title_font_size_text_mob",
+            "label": "Title Font Size",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "font_size_subtext",
+            "label": "Sub Title Font Size",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "font_size_subtextTab",
+            "label": "Sub Title Tab Font Size",
+            "default": {
+              "value": 16,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "font_size_subtextMob",
+            "label": "Sub Title Mobile Font Size",
+            "default": {
+              "value": 14,
+              "type": "px"
+            }
+          }
+
+        ]
+      }
+    ]
+
+  }
+]

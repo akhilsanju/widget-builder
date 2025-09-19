@@ -1,0 +1,62 @@
+query ProductList($productId: [Int!], $activeCurrencyCode: currencyCode) {
+  site {
+    products(entityIds: $productId) {
+      edges {
+        node {
+          entityId
+          name
+          path
+          addToCartUrl
+          inventory {
+            isInStock
+          }
+          defaultImage {
+            url(width: 270)
+            altText
+          }
+          prices(currencyCode: $activeCurrencyCode, includeTax: true) {
+            salePrice {
+              value
+              currencyCode
+            }
+            price {
+              value
+              currencyCode
+            }
+            basePrice {
+              value
+              currencyCode
+            }
+          }
+          categories {
+            edges {
+              node {
+                name
+                path
+              }
+            }
+          }
+          productOptions {
+            edges {
+              node {
+                entityId
+              }
+            }
+          }
+          brand {
+            path
+            name
+          }
+          customFields(names: ["Free Shipping","Operator","Clearance","bonus","Disabled Reason"]) {
+            edges {
+              node {
+                name
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

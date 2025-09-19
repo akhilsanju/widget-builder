@@ -1,0 +1,31 @@
+{
+  "cardurl": "/",
+  "cardimage": {
+    "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/buyplastic.png?t=1756379064",
+    "type": "IMAGE_MANAGER"
+  },
+  "cardTitle": "BUY PLASTIC",
+  "cardurl2": "/",
+  "cardimage2": {
+    "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/fabrication.png?t=1756379452",
+    "type": "IMAGE_MANAGER"
+  },
+  "cardTitle2": "BUY PLASTIC",
+  "cardurl3": "/",
+  "cardimage3": {
+    "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/resources.png?t=1756379492",
+    "type": "IMAGE_MANAGER"
+  },
+  "cardTitle3": "BUY PLASTIC",
+  "cardTitleColor": "#000000",
+  "cardTitle2Color": "#000000",
+  "cardTitle3Color": "#000000",
+  "font_size": {
+    "value": 24,
+    "type": "px"
+  },
+  "cardsubTitle": "Explore the materials we offer",
+  "cardsubTitle2": "Check out our capabilities and processes.",
+  "cardsubTitle3": "Explore insights, tools, and expertise.",
+  "cardsubTitleSub": "#000000"
+}

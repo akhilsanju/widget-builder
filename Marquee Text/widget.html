@@ -1,0 +1,93 @@
+<style>
+
+div[data-layout-name="Layout-marquee"] {
+  position: relative;
+  z-index: -2;
+}
+
+.marquee-text-{{_.id}} {
+  width: 100vw;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  margin: {{contentMobilemargin.top.value}}px {{contentMobilemargin.right.value}}px {{contentMobilemargin.bottom.value}}px {{contentMobilemargin.left.value}}px
+}
+
+.marquee-text-{{_.id}} .marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-smooth 10s linear infinite;
+  padding: 15px 0;
+}
+
+.marquee-text-{{_.id}} p {
+  text-transform: uppercase;
+  will-change: transform;
+  font-size: {{marquee-text-title-font-size-mobile.value}}px;
+  color: #fff;
+  margin: 0 46px;
+  position: relative;
+}
+
+.marquee-text-{{_.id}} p::after{
+ position: absolute;
+ content: '';
+ width: 7px;
+ height: 7px;
+ left: -46px;
+ top: 50%;
+ background: #fff;
+ border-radius: 30px;
+}
+
+@media (min-width:767px){
+.marquee-text-{{_.id}} p {
+  font-size: {{marquee-text-title-font-size.value}}px;
+}
+
+.marquee-text-{{_.id}} {
+  margin: {{contentmargin.top.value}}px {{contentmargin.right.value}}px {{contentmargin.bottom.value}}px {{contentmargin.left.value}}px;  
+}
+
+}
+
+        @keyframes marquee-smooth {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+</style>
+
+
+</style>
+    
+<div class="marquee-container marquee-text-{{_.id}}" role="region" aria-label="Scrolling announcements">
+  <div class="marquee-track">
+    {{#each marqueeText}}
+      <p aria-live="off">{{marquee-text-title}}</p>
+    {{/each}}
+  </div>
+</div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const marqueeTrack = document.getElementById('marqueeTrack');
+            
+            if (marqueeTrack) {
+                // Duplicate the content to create seamless loop
+                const originalContent = marqueeTrack.innerHTML;
+                marqueeTrack.innerHTML = originalContent + originalContent;
+            }
+        });
+    </script>
+
+

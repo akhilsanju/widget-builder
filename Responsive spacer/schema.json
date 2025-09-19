@@ -1,0 +1,49 @@
+[
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Sample Text",
+        "settings": [
+          {
+            "type": "number",
+            "id": "mobileSpacing",
+            "label": "Mobile Spacing",
+            "default": {
+              "value": 72,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "tabletSpacing",
+            "label": "Tablet Spacing (720px)",
+            "default": {
+              "value": 72,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "desktopSpacing",
+            "label": "Desktop Spacing (960px)",
+            "default": {
+              "value": 100,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "wideScreenSpacing",
+            "label": "Widescreen Spacing (1200px)",
+            "default": {
+              "value": 100,
+              "type": "px"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

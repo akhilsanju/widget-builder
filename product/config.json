@@ -1,0 +1,26 @@
+{
+  "tab-text-color": "#000000",
+  "active-tab-text-color": "red",
+  "tab_font_size_desktop": {
+    "value": 15,
+    "type": "px"
+  },
+  "tab_font_size_tablet": {
+    "value": 15,
+    "type": "px"
+  },
+  "tab_font_size_mobile": {
+    "value": 12,
+    "type": "px"
+  },
+  "featured-product-tabs": [
+    {
+      "featured-product-tab-title": "Lorem Ipsum",
+      "TabContent": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae fugiat nam quod tempora aspernatur ea voluptatibus? Temporibus modi nisi amet culpa commodi nostrum excepturi magnam debitis quam, atque similique, mollitia tenetur molestiae ipsam optio libero sint sed maiores architecto esse voluptatibus! Suscipit, doloribus itaque error distinctio repellendus doloremque ipsa pariatur!"
+    },
+    {
+      "featured-product-tab-title": "Lorem Ipsum",
+      "TabContent": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae fugiat nam quod tempora aspernatur ea voluptatibus? Temporibus modi nisi amet culpa commodi nostrum excepturi magnam debitis quam, atque similique, mollitia tenetur molestiae ipsam optio libero sint sed maiores architecto esse voluptatibus! Suscipit, doloribus itaque error distinctio repellendus doloremque ipsa pariatur!"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "background_video": "MqKIy6Xys1U",
+  "video_title": "New & Used Caravans",
+  "video_description": "Sell & Buy Near You",
+  "video_button_text": "Shop Now",
+  "video_button_link": "/#",
+  "background_image": {
+    "src": "",
+    "type": "IMAGE_MANAGER"
+  },
+  "hide_text_mobile": true
+}

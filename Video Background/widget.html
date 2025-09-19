@@ -1,0 +1,257 @@
+<style>
+    .video-section {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        color: #fff;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .video-background iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw;
+        min-width: 177.78vh;
+        min-height: 100vh;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .video-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 2;
+    }
+    .video-content {
+        position: relative;
+        z-index: 3;
+        margin-bottom: 100px;
+        padding: 0 20px;
+    }
+    .video-content h1{
+        color: #ffffff;
+        font-size: 80px;
+        line-height: 95px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    .video-content p{
+        color: #ffffff;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    .video-content a{
+        color: #ffffff;
+        font-size: 16px;
+        padding: 11px 25px;
+        font-weight: 700;
+        border: 2px solid #ffffff;
+        text-decoration: none;
+        border-radius: 68px;
+        display: inline-block;
+    }
+
+    .mobile-banner {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1a1a1a; 
+        {{#and (if background_image.src) (if hide_video_mobile)}}
+        background-image: url('{{background_image.src}}');
+        {{else}}
+        background-image: url('https://img.youtube.com/vi/{{background_video}}/maxresdefault.jpg');
+        {{/and}}
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+    }
+
+    @media screen and (min-width: 800px) and (max-width: 1366px) {
+        .video-content h1 {
+            font-size: 54px;
+            line-height: 65px;
+        }
+        .video-content p {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    @media (max-width: 799px) {
+        .video-overlay{
+            {{#and (if background_image.src) (if hide_video_mobile)}}
+            background: none;
+            {{/and}}
+        }
+        .video-content h1 {
+            font-size: 34px;
+            line-height: 38px;
+        }
+        .video-content p {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .video-content a {
+            font-size: 14px;
+            line-height: 18px;
+            padding: 8px 20px;
+        }
+        
+        .video-section {
+            align-items: center;
+        }
+        .video-content {
+            margin-bottom: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        {{#if hide_video_mobile }}
+        .video-background {
+            display: none;
+        }
+        
+        .mobile-banner {
+            display: block;
+        }
+        {{/if}}
+        {{#if hide_text_mobile}}
+            .video-content{
+                display: none;
+            }
+        {{/if}}
+    }
+    .mobile-clickable-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4; 
+    cursor: pointer;
+}
+
+@media (max-width: 799px) {
+    .mobile-clickable-overlay {
+        display: block;
+    }
+}
+</style>
+
+<div class="video-section">
+    <div class="video-background">
+        <div id="youtube-player"></div>
+    </div>   
+    <div class="mobile-banner"></div>
+    <div class="video-overlay"></div>
+    <div class="video-content container">
+        <h1>{{video_title}}</h1>
+        <p>{{video_description}}</p>
+        <a href="{{video_button_link}}">{{video_button_text}}</a>
+    </div>
+    <a href="{{video_button_link}}" class="mobile-clickable-overlay"></a>
+</div>
+<script>
+    var apiLoaded = false;
+    var player = null;
+    var shouldPlayVideo = window.innerWidth >= 800 || {{#if hide_video_mobile }}false{{else}}true{{/if}};
+    
+    function loadYouTubeAPI() {
+        if (apiLoaded) return;
+        
+        apiLoaded = true;
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+    
+    if (shouldPlayVideo) {
+        loadYouTubeAPI();
+    }
+
+    function onYouTubeIframeAPIReady() {
+        if (!shouldPlayVideo) return;
+        
+        if (player === null) {
+            player = new YT.Player('youtube-player', {
+                videoId: '{{background_video}}',
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    playlist: '{{background_video}}',
+                    controls: 0,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    mute: 1
+                },
+                events: {
+                    onReady: function (event) {
+                        event.target.playVideo();
+                        event.target.setPlaybackQuality('hd1080');
+                    }
+                }
+            });
+        }
+    }
+    
+    function debounce(func, wait) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+    
+    var handleResize = debounce(function() {
+        var isWideScreen = window.innerWidth >= 800;
+        var shouldHideOnMobile = {{#if hide_video_mobile }}true{{else}}false{{/if}};
+        
+        var newShouldPlayVideo = isWideScreen || !shouldHideOnMobile;
+        
+        if (newShouldPlayVideo !== shouldPlayVideo) {
+            shouldPlayVideo = newShouldPlayVideo;
+            
+            if (shouldPlayVideo) {
+                if (!apiLoaded) {
+                    loadYouTubeAPI();
+                } else if (player && typeof player.playVideo === 'function') {
+                    player.playVideo();
+                }
+            } else {
+                if (player && typeof player.pauseVideo === 'function') {
+                    player.pauseVideo();
+                }
+            }
+        }
+    }, 250);
+    
+    window.addEventListener('resize', handleResize);
+</script>

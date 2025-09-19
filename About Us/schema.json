@@ -1,0 +1,352 @@
+[
+  {
+    "type": "tab",
+    "label": "General Settings",
+    "sections": [
+      {
+        "label": "General Settings",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Reverse Columns",
+            "id": "featuredDeal-reverse-columns",
+            "default": false
+          },
+          {
+            "type": "boolean",
+            "label": "Reverse Columns On Small Screens",
+            "id": "featuredDeal-reverse-columns-mobile",
+            "default": false
+          },
+          {
+            "type": "alignment",
+            "label": "Content Alignment",
+            "id": "fdContentAlign",
+            "default": {
+              "horizontal": "left",
+              "vertical": "bottom"
+            },
+            "typeMeta": {
+              "display": "both"
+            }
+          },
+          {
+            "type": "boxModel",
+            "label": "Content Padding(Desktop)",
+            "id": "contentPadding",
+            "default": {
+              "top": {
+                "value": "96",
+                "type": "px"
+              },
+              "right": {
+                "value": "72",
+                "type": "px"
+              },
+              "bottom": {
+                "value": "92",
+                "type": "px"
+              },
+              "left": {
+                "value": "72",
+                "type": "px"
+              }
+            }
+          },
+          {
+            "type": "boxModel",
+            "label": "Content Padding(Mobile)",
+            "id": "contentMobilePadding",
+            "default": {
+              "top": {
+                "value": "34",
+                "type": "px"
+              },
+              "right": {
+                "value": "26",
+                "type": "px"
+              },
+              "bottom": {
+                "value": "34",
+                "type": "px"
+              },
+              "left": {
+                "value": "26",
+                "type": "px"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "label": "Image Settings",
+        "settings": [
+          {
+            "type": "imageManager",
+            "id": "imageUrlDesk",
+            "label": "Desktop Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/rectangle-21.jpg?t=1756634001",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "imageManager",
+            "id": "imageUrlDesk2",
+            "label": "Desktop Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/rectangle-21.jpg?t=1756634001",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "imageManager",
+            "id": "imageUrlMob",
+            "label": "Mobile Image Only For One Image Setting",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/rectangle-21.jpg?t=1756634001",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "input",
+            "label": "Img Alt Text",
+            "id": "imgAltText",
+            "default": ""
+          },        
+          {
+            "type": "number",
+            "label": "Image Height(Tablet)",
+            "id": "fdImageHeightTab",
+            "default": {
+              "value": 400,
+              "type": "px"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Button Settings",
+        "settings": [
+          {
+            "type": "color",
+            "label": "Button Background Color",
+            "id": "btnBckColor",
+            "default": "#00470F"
+          },
+          {
+            "type": "color",
+            "label": "Button Text Color",
+            "id": "btnTextColor",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "label": "Button Background Hover Color",
+            "id": "btnBckColorHover",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "label": "Button Text Hover Color",
+            "id": "btnTextColorHover",
+            "default": "#000000"
+          },
+          {
+            "type": "boolean",
+            "label": "Enable Button",
+            "id": "displayControls",
+            "default": true
+          }
+        ]
+      },
+      {
+        "label": "CONTENT",
+        "settings": [
+          {
+            "type": "input",
+            "label": "Title",
+            "id": "fdTitle",
+            "default": "Ask the Experts"
+          },
+          {
+            "type": "code",
+            "label": "Content",
+            "id": "fdContent",
+            "default": "With customized pricing, custom cutting, fast delivery, and free local pick up, we have the solutions you need to stay on schedule! We are constantly expanding our inventory and product lines to meet our customer’s growing needs. We’re here to help! Whether you have questions, need support, or are interested in our plastic solutions, our team is ready to assist you."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Font Sizes",
+    "sections": [
+      {
+        "label": "Text Settings",
+        "settings": [
+          {
+            "type": "color",
+            "label": "Text Color",
+            "id": "txtColor",
+            "default": "#00470F"
+          },
+          {
+            "type": "select",
+            "id": "featuredDeal-heading-seo-tag",
+            "label": "SEO Tag",
+            "default": "h3",
+            "typeMeta": {
+              "selectOptions": [
+                {
+                  "label": "h1",
+                  "value": "h1"
+                },
+                {
+                  "label": "h2",
+                  "value": "h2"
+                },
+                {
+                  "label": "h3",
+                  "value": "h3"
+                },
+                {
+                  "label": "h4",
+                  "value": "h4"
+                },
+                {
+                  "label": "h5",
+                  "value": "h5"
+                },
+                {
+                  "label": "h6",
+                  "value": "h6"
+                },
+                {
+                  "label": "p",
+                  "value": "p"
+                }
+              ]
+            }
+          },
+          {
+            "type": "number",
+            "label": "Title Size(Desktop)",
+            "id": "fdTitleSizeDesk",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Title Size(Tablet)",
+            "id": "fdTitleSizeTab",
+            "default": {
+              "value": 26,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Title Size(Mobile)",
+            "id": "fdTitleSizeMob",
+            "default": {
+              "value": 18,
+              "type": "px"
+            }
+          },
+          {
+            "type": "select",
+            "id": "featuredDeal-content-seo-tag",
+            "label": "SEO Tag",
+            "default": "h3",
+            "typeMeta": {
+              "selectOptions": [
+                {
+                  "label": "h1",
+                  "value": "h1"
+                },
+                {
+                  "label": "h2",
+                  "value": "h2"
+                },
+                {
+                  "label": "h3",
+                  "value": "h3"
+                },
+                {
+                  "label": "h4",
+                  "value": "h4"
+                },
+                {
+                  "label": "h5",
+                  "value": "h5"
+                },
+                {
+                  "label": "h6",
+                  "value": "h6"
+                },
+                {
+                  "label": "p",
+                  "value": "p"
+                }
+              ]
+            }
+          },
+          {
+            "type": "number",
+            "label": "Content Size(Desktop)",
+            "id": "fdContentSizeDesk",
+            "default": {
+              "value": 16,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Content Size(Mobile)",
+            "id": "fdContentSizeMob",
+            "default": {
+              "value": 12,
+              "type": "px"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "array",
+    "label": "Settings",
+    "id": "btnArray",
+    "defaultCount": 1,
+    "entryLabel": "Button",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "input",
+                "label": "Button Text",
+                "id": "btnText",
+                "default": "Contact Us"
+              },
+              {
+                "type": "input",
+                "label": "Link",
+                "id": "btnLink",
+                "default": "/"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

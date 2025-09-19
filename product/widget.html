@@ -1,0 +1,216 @@
+
+<style>
+    .featured-product-tabs-{{_.id}} {
+        display: flex;
+        align-items: center;
+        margin-bottom : 24px;
+        justify-content: space-between;
+    }
+    .featured-product-tabs-{{_.id}} .tabs-container {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+    .featured-product-tabs-{{_.id}} .tabs-container .tab-item {
+        padding: 4px 0px;
+        color: {{tab-text-color}};
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: {{tab_font_size_desktop.value}}{{tab_font_size_desktop.type}};
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .featured-product-tabs-{{_.id}} .tab-item.active {
+        color: #0153A0;
+        border-bottom: 2px solid #0153A0;
+    }
+    .featured-product-tabs-{{_.id}} .tabs-container .active-tab {
+        border-bottom: 2px solid {{active-tab-text-color}};
+        background-color: {{active-tab-background-color}};
+        color: {{active-tab-text-color}};
+    }
+
+    .featured-product-tabs-{{_.id}} .mb-40 {
+    margin-bottom: 40px;
+    }
+    .featured-product-page-heading-{{_.id}} {
+        color:{{featured-product-heading-color}};
+        text-align:{{featured_product_header_heading_align.horizontal}};
+        font-size:{{heading_font_size_desktop.value}}{{heading_font_size_desktop.type}};
+        margin-bottom: 0;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .featured-product-page-heading-{{_.id}} {
+            font-size: {{heading_font_size_tablet.value}}{{heading_font_size_tablet.type}};
+        }
+
+        .featured-product-tabs-{{_.id}} {
+            flex-direction: column;
+            {{#if featured_product_header_panel_align.horizontal '===' 'left'}}
+                align-items:flex-start;
+            {{else if featured_product_header_panel_align.horizontal '===' 'center'}}
+                align-items:center;
+            {{else}}
+                align-items:flex-end;
+            {{/if}}
+            gap: 22px;
+            padding-right: 0px;
+        }
+        .featured-product-tabs-{{_.id}} .tabs-container {
+            gap: 24px;
+        }
+        .featured-product-tabs-{{_.id}} .tabs-container .tab-item:hover { 
+            border-bottom: 1px solid {{tab-border-color}};
+            background-color: {{active-tab-background-color}};
+            color: {{active-tab-text-color}};
+        }
+
+        .featured-product-tabs-{{_.id}} .mb-40 {
+            margin-bottom: 28px;
+        }
+
+    }
+
+    @media (max-width:700px) {
+        .featured-product-page-heading-{{_.id}} {
+            font-size: {{heading_font_size_mobile.value}}{{heading_font_size_mobile.type}};
+        }
+
+        .featured-product-tabs-{{_.id}} .tabs-container .tab-item {
+            font-size: {{tab_font_size_mobile.value}}{{tab_font_size_mobile.type}};
+        }
+    }
+
+
+/* Tab Content Styles */
+.featured-tab-heading-container .product-tab-content {
+    display: none; 
+    opacity: 0;
+}
+
+.featured-tab-heading-container .product-tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.product-tab-content {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-tab-content.active {
+    opacity: 1;
+}
+
+
+</style>
+
+    <div class="featured-tab-heading-container container" custom-field="{{customfield-key}}">
+    <div class="featured-product-tabs-{{_.id}}">
+        <div class="tabs-container">
+            {{#if featured-product-tabs}}
+                {{#each featured-product-tabs}}
+                    <a href="#" class="tab-item {{#if @index '==' 0}}active-tab{{/if}}" data-index="{{add @index 1}}"  data-btn-text="shop {{featured-product-tab-title}}">{{featured-product-tab-title}}</a>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+
+      {{#if featured-product-tabs}}
+      {{#each featured-product-tabs}}
+    <div class="product-tab-content">
+        <p>{{{TabContent}}}</p>
+    </div>
+    {{/each}}
+    {{/if}}
+
+</div>
+
+
+            {{#each products as |product|}}
+                    {{#each ../_.data.site.products.edges as |productResource|}}
+                      {{#if productResource.node.entityId "==" product.productId}}
+                        <div class="featured-tab-heading-container container" custom-field="{{customfield-key}}">   
+                                <div class="featured-product-tabs-{{_.id}}">
+                                    <div class="tabs-container">
+                                        {{#if featured-product-tabs}}
+                                            {{#each featured-product-tabs}}
+                                                <a href="#" class="tab-item {{#if @index '==' 0}}active-tab{{/if}}" 
+                                                data-index="{{add @index 1}}"  
+                                                data-btn-text="shop {{featured-product-tab-title}}">{{featured-product-tab-title}}</a>
+                                            {{/each}}
+                                        {{/if}}
+                                    </div>
+                                </div> 
+                                   
+                                {{#if featured-product-tabs}}
+                                {{#each featured-product-tabs}}
+                                {{#each ../productResource.node.customFields.edges}} 
+                                <div class="product-tab-content">
+                                    <p>{{{TabContent}}}</p>
+                                </div>
+                                {{/each}}   
+                                {{/each}}                            
+                            </div>
+                      {{/if}}
+                    {{/each}}
+    {{/each}}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+
+$(document).ready(function () {
+    initializeFeaturedTabs();
+});
+
+function initializeFeaturedTabs() {
+    $(".featured-tab-heading-container").each(function(index, container) {
+        const tabItems = $(container).find('.tab-item');
+        const tabContents = $(container).find('.product-tab-content');
+        
+        // Initially remove active class from all tab contents and add to first one
+        tabContents.removeClass('active');
+        tabContents.first().addClass('active');
+        
+        // Set first tab as active
+        tabItems.first().addClass('active-tab').siblings().removeClass('active-tab');
+        
+        // Add click event to tab items
+        tabItems.on('click', function(e) {
+            e.preventDefault();
+            
+            const clickedIndex = $(this).attr('data-index') - 1; // data-index starts from 1, array index starts from 0
+            
+            // Remove active class from all tabs and add to clicked tab
+            tabItems.removeClass('active-tab');
+            $(this).addClass('active-tab');
+            
+            // Remove active class from all tab contents and add to the corresponding one
+            tabContents.removeClass('active');
+            tabContents.eq(clickedIndex).addClass('active');
+            
+            // Optional: Handle slider reinitialization if needed
+            const activeTabContent = tabContents.eq(clickedIndex);
+            const newSlider = activeTabContent.find('.productCardSlider');
+            
+            if (newSlider.length > 0) {
+                if (newSlider.hasClass('slick-initialized')) {
+                    newSlider.slick('unslick');
+                }
+                // Assuming you have initializeSlider function defined elsewhere
+                if (typeof initializeSlider === 'function') {
+                    initializeSlider(newSlider, false, false, 4, 1);
+                }
+            }
+        });
+    });
+}
+
+</script>

@@ -1,0 +1,296 @@
+[
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Hero Banner",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Enable Full Width",
+            "id": "enableFW",
+            "default": true
+          },
+          {
+            "type": "number",
+            "label": "Height(Mobile)",
+            "id": "carouselHeightMob",
+            "default": {
+              "value": 600,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Height(Tablet)",
+            "id": "carouselHeightTab",
+            "default": {
+              "value": 750,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Height(Desktop)",
+            "id": "carouselHeight",
+            "default": {
+              "value": 800,
+              "type": "px"
+            }
+          },
+          {
+            "type": "boolean",
+            "label": "Show Heading",
+            "id": "herobanner-show-heading",
+            "default": true
+          },
+          {
+            "type": "input",
+            "label": "Heading",
+            "id": "fwHeading",
+            "default": "Polyverse "
+          },
+          {
+            "type": "select",
+            "id": "herobannerheading-seo-tag",
+            "label": "SEO Tag",
+            "default": "h1",
+            "typeMeta": {
+              "selectOptions": [
+                {
+                  "label": "h1",
+                  "value": "h1"
+                },
+                {
+                  "label": "h2",
+                  "value": "h2"
+                },
+                {
+                  "label": "h3",
+                  "value": "h3"
+                },
+                {
+                  "label": "h4",
+                  "value": "h4"
+                },
+                {
+                  "label": "h5",
+                  "value": "h5"
+                },
+                {
+                  "label": "h6",
+                  "value": "h6"
+                },
+                {
+                  "label": "p",
+                  "value": "p"
+                }
+              ]
+            }
+          },
+          {
+            "type": "boolean",
+            "label": "Enable image",
+            "id": "enableImage",
+            "default": true
+          }, 
+          {
+            "type": "input",
+            "label": "Enter Video Url",
+            "id": "videoUrl",
+            "default": ""
+          }, 
+          {
+            "type": "text",
+            "label": "Bottom Text",
+            "id": "BottomText",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }, 
+          {
+            "type": "imageManager",
+            "id": "imageUrlDesk",
+            "label": "Desktop Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/screenshot-2025-08-22-131002.png?t=1756275951",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "imageManager",
+            "id": "heroimageUrlmob",
+            "label": "Enable Image For Mobile Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/screenshot-2025-08-22-131002.png?t=1756275951",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "input",
+            "label": "Alt Text",
+            "id": "altTextDesk",
+            "default": "BuyPlastic Hero Banner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Heading",
+        "settings": [
+          {
+            "type": "color",
+            "label": "Font Color",
+            "id": "headingFontColor",
+            "default": "#fff"
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Mobile)",
+            "id": "headingFontSizeMob",
+            "default": {
+              "value": 40,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Tablet)",
+            "id": "headingFontSizeTab",
+            "default": {
+              "value": 44,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Desktop)",
+            "id": "headingFontSizeDesk",
+            "default": {
+              "value": 76,
+              "type": "px"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Bottom Text",
+        "settings": [
+          {
+            "type": "color",
+            "label": "Font Color",
+            "id": "bodyFontColor",
+            "default": "#fff"
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Mobile)",
+            "id": "bodyFontSizeMob",
+            "default": {
+              "value": 16,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Tablet)",
+            "id": "bodyFontSizeTab",
+            "default": {
+              "value": 17,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Desktop)",
+            "id": "bodyFontSizeDesk",
+            "default": {
+              "value": 40,
+              "type": "px"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Button",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Button Text",
+            "id": "BtnText",
+            "default": "GET A QUOTE"
+          }, 
+          {
+            "type": "color",
+            "label": "Font Color",
+            "id": "ctaFontColor",
+            "default": "#005D14"
+          },
+          {
+            "type": "color",
+            "label": "Button background Color",
+            "id": "ctaBckColor",
+            "default": "#fff"
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Mobile)",
+            "id": "ctaFontSizeMob",
+            "default": {
+              "value": 12,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Tablet)",
+            "id": "ctaFontSizeTab",
+            "default": {
+              "value": 14,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Font Size(Desktop)",
+            "id": "ctaFontSizeDesk",
+            "default": {
+              "value": 16,
+              "type": "px"
+            }
+          },
+
+          {
+            "type": "color",
+            "label": "Button Hover background Color",
+            "id": "ctaBckHoverColor",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "label": "Button Hover Text Color",
+            "id": "ctaTextHoverColor",
+            "default": "#fff"
+          }
+
+        ]
+      }
+    ]
+  }
+]

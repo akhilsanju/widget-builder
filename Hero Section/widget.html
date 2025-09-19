@@ -1,0 +1,564 @@
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<style>
+
+
+    .hero-banner-container-{{_.id}} .herobanner-cta-btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    @media (max-width: 1920px) {
+        .hero-banner-container-{{_.id}}.full-width{
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+    }
+    }
+
+    .hero-banner-container-{{_.id}} .hero-banner{
+        background-size: cover;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: {{carouselHeight.value}}px;
+    }
+
+    .hero-banner-container-{{_.id}} .hb-content-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 10.5px;
+        width: 100%;
+        z-index: 4;
+    }
+    .hero-banner-container-{{_.id}} .hb-content-container .herobanner_heading{
+        text-transform: uppercase;
+        color:{{headingFontColor}};
+        font-weight: 500;
+        font-size: {{headingFontSizeDesk.value}}px;
+        line-height: 100%;
+        font-family: 'karla';
+    }
+
+    .video-hb-content-container{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    }
+
+  .text-btn-wrapper{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 57px; 
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    max-width:1440px;
+    margin: 0 auto;
+    }
+
+     @media (max-width: 768px) {
+    .text-btn-wrapper{
+          padding: 0px 15px;
+    }
+  }
+
+    .text-btn-wrapper::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      width: 95%;
+      margin: 0 auto;
+      background-color:#FFFFFF33;
+    }
+
+    @media (max-width: 768px) {
+   .text-btn-wrapper::after{
+          bottom: 8px;
+          left: 50%;
+          transform: translateX(-50%);
+    }
+  }
+
+    .hero-subText{
+      max-width: 759px;
+    }
+
+    .hidden-text {
+    visibility: hidden;
+    white-space: pre; 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-bottom: 20px;
+    padding-left: 12px;
+    }
+
+    @media (max-width: 768px) {
+    .hidden-text{
+       padding-left: 0px;
+    }
+  }
+ 
+    .hidden-text span{
+        font-size: {{bodyFontSizeDesk.value}}px;
+        font-weight: 500;
+        color: {{bodyFontColor}};
+        line-height: 100%;
+        text-transform: uppercase;
+        font-family: 'Poppins';
+    }
+
+    @media (max-width: 1024px) {
+    .hidden-text span{
+      font-size: {{bodyFontSizeTab.value}}px;
+    }
+    }
+    @media (max-width: 768px) {
+    .hidden-text span{
+      font-size: {{bodyFontSizeMob.value}}px;
+       line-height: 120%;
+
+    }
+    }
+
+    .word {
+    opacity: 0;
+    animation: typeIn 0.1s ease-in-out forwards;
+    }
+
+    @keyframes typeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: currentColor;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    }
+
+    @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+    }
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  /* padding-bottom: 56.25%; 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 23.06%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 3;
+  }
+
+.widget-quote-btn{
+    visibility: hidden;
+}
+
+@media(max-width:768px){
+  .widget-quote-btn{
+    display: none;
+  }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.widget-quote-btn .quote-container {
+  background-color: {{ctaBckColor}}; 
+  border-radius: 30px;
+  padding: 10px 52px 10px 20px;
+  position: relative;
+  height: 40px;
+}
+
+.widget-quote-btn .quote-container:hover{
+   background-color: {{ctaBckHoverColor}}; 
+}
+
+.widget-quote-btn .quote-container a {
+  color: {{ctaFontColor}}; 
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: normal;
+  font-size: {{ctaFontSizeMob.value}}px;
+  display: block;
+  white-space: nowrap;
+}
+
+.widget-quote-btn .quote-container a:hover{
+  color:{{ctaTextHoverColor}};
+}
+
+
+@media (min-width: 768px) {
+  .widget-quote-btn .quote-container a {
+    font-size: {{ctaFontSizeTab.value}}px;
+    line-height:22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .widget-quote-btn .quote-container a {
+    font-size: {{ctaFontSizeDesk.value}}px;
+  }
+}
+
+.widget-quote-btn .quote-container .arrow {
+  width: 32px;
+  height: 32px;
+  background-color: #00470F;
+  display: inline-block;
+  border-radius: 50px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  overflow: hidden;
+}
+
+.widget-quote-btn .quote-container .arrow::before,
+.widget-quote-btn .quote-container .arrow::after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    transform-origin: 0% 0%;
+    background-image: url('https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/whitearrowthin.png?t=1756365273');
+    transition: top 0.4s ease, left 0.4s ease;
+    top: 50%;
+    left: 50%;
+}
+
+.widget-quote-btn .quote-container .arrow::after{
+  content: none;
+}
+
+      .video-embed {
+      position: relative;
+      width: 100%;
+      /* padding-bottom: 56.25%; 16:9 aspect ratio */
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .video-embed iframe, .video-embed video {
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      width: 100vw !important; 
+      height: 56.25vw !important; 
+      min-height: 100vh; 
+      min-width: 177.78vh; 
+      transform: translate(-50%, -50%); 
+      border: 0;
+      object-fit: cover
+      }
+
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .hero-banner-container-{{_.id}} .hb-content-container .herobanner_heading{
+            font-size: {{headingFontSizeTab.value}}px;
+            line-height: 48px;
+        }
+        .hero-banner-container-{{_.id}} .hb-content-container.hero-subText p span{
+            font-size: {{bodyFontSizeTab.value}}px;
+            line-height: 24px;
+        }
+        .hero-banner-container-{{_.id}} .hero-banner{
+            height: {{carouselHeightTab.value}}px;
+        }
+    }
+    @media (max-width: 600px) {
+        .hero-banner-container-{{_.id}} .hb-content-container .herobanner_heading{
+            font-size: {{headingFontSizeMob.value}}px;
+            line-height: 48px;
+        }
+        .hero-banner-container-{{_.id}} .hb-content-container .hero-subText p span{
+            font-size: {{bodyFontSizeMob.value}}px;
+            line-height: 24px;
+        }
+        .hero-banner-container-{{_.id}} .hero-banner{
+            height: {{carouselHeightMob.value}}px;
+        }
+      }
+
+
+.video-down-arrow-container {
+  position: absolute;
+  width: 40px; 
+  height: 40px;
+  overflow: hidden;
+  bottom: 25px;
+  left: 50%;
+  z-index: 9;
+  transform: translateX(-50%);
+}
+
+.video-down-arrow img {
+  width: 100%;
+  display: block;
+}
+
+.video-down-arrow {
+  position: absolute;
+  top: -90%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 9999;
+  animation: slide-overlay 2s linear infinite;
+  pointer-events: none;
+
+}
+
+@keyframes slide-overlay {
+  0% {
+    top: -90%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+
+    </style>
+    
+    {{#if enableImage}}
+    <div class= "hero-banner-container-{{_.id}} {{#if enableFW}}full-width{{/if}} "  data-image-mobile="{{heroimageUrlmob.src}}"
+       data-image-desktop="{{imageUrlDesk.src}}">
+        <div class= "hero-banner container desk" style= "max-width: 100%;
+         background-image: url('{{imageUrlDesk.src}}');" aria-label= "{{altTextDesk}} ">
+            <div class= "hb-content-container">
+            {{#if herobanner-show-heading}}
+            <{{herobannerheading-seo-tag}} class="herobanner_heading">{{fwHeading}}</{{herobannerheading-seo-tag}}>
+            {{/if}}                
+            </div>
+    <div class="text-btn-wrapper">
+    <div class="hero-subText">
+        <p id="bottom-text" class="hidden-text">{{BottomText}}</p>
+    </div>
+        <div class="widget-quote-btn">
+        <div class="quote-container">
+            <a href="/contact-us" class="quote-btn">{{BtnText}}
+            <span class="arrow"></span>
+            </a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    {{else}}
+
+    <div class= "hero-banner-container-{{_.id}} {{#if enableFW}}full-width{{/if}}">
+    <div id="video-widget" style="position:relative; width:100%; height:100vh; overflow:hidden;" videolink="{{videoUrl}}">
+       <div class="video-overlay"></div>
+      <div class="video-embed"></div> 
+
+      <div class= "hb-content-container video-hb-content-container">
+            {{#if herobanner-show-heading}}
+            <{{herobannerheading-seo-tag}} class="herobanner_heading">{{fwHeading}}</{{herobannerheading-seo-tag}}>
+            {{/if}}                
+     </div>   
+    <div class="text-btn-wrapper">
+    <div class="hero-subText">
+        <p id="bottom-text" class="hidden-text">{{BottomText}}</p>
+    </div>
+        <div class="widget-quote-btn">
+        <div class="quote-container">
+            <a href="/contact-us" class="quote-btn">{{BtnText}}
+            <span class="arrow"></span>
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="video-down-arrow-container">
+    <div class="video-down-arrow">
+      <img src="https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/flowbite-arrow-up-outline-1-.png?t=1756891712" alt="downarrow">
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+{{/if}}
+chatgpt
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+     function updateImage() {
+      const screenWidth = window.innerWidth;
+
+      // Get all deal containers
+      const dealContainers = document.querySelectorAll('.hero-banner-container-{{_.id}}');
+      dealContainers.forEach(container => {
+        const mobileSrc = container.dataset.imageMobile;
+        const desktopSrc = container.dataset.imageDesktop;
+        const img = container.querySelector('.hero-banner');
+
+        if (img) {
+          img.style.backgroundImage = `url(${screenWidth <= 768 ? mobileSrc : desktopSrc})`;
+        }
+      });
+    }
+
+      window.addEventListener('resize', updateImage);
+
+      updateImage();
+
+  const container = document.getElementById("video-widget");
+  if (!container) return;
+
+  const url = container.getAttribute("videolink");
+  if (!url) {
+    console.warn("Video URL not found.");
+    return;
+  }
+
+  const embedTarget = container.querySelector('.video-embed');
+  if (!embedTarget) {
+    console.warn("Missing .video-embed container inside #video-widget");
+    return;
+  }
+
+  let embedCode = "";
+
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    const videoId = url.includes("youtu.be") 
+      ? url.split("/").pop() 
+      : new URL(url).searchParams.get("v");
+
+    embedCode = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}" 
+                  frameborder="0" allow="autoplay; encrypted-media" 
+                  allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>`;
+
+  } else if (url.includes("vimeo.com")) {
+    const videoId = url.split("/").pop();
+
+    embedCode = `<iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&loop=1" 
+                  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+                  allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>`;
+
+  } else if (url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg")) {
+    embedCode = `<video autoplay muted loop playsinline controls 
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                  <source src="${url}" type="video/mp4">
+                </video>`;
+  } else {
+    embedCode = "<p>Unsupported video format.</p>";
+  }
+
+  embedTarget.innerHTML = embedCode;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    const textEl = document.getElementById("bottom-text");
+    const button = document.querySelector(".widget-quote-btn");
+    
+    if (!textEl) return;
+
+    const text = textEl.textContent.trim();
+    const words = text.split(/\s+/);
+    textEl.textContent = ""; // Clear original text
+
+    words.forEach((word, i) => {
+      const span = document.createElement("span");
+      span.innerHTML = word + "&nbsp;";
+      span.className = "word";
+      span.style.animationDelay = `${i * 0.25}s`; 
+      textEl.appendChild(span);
+    });
+
+    textEl.style.visibility = "visible";
+    
+    const totalAnimationTime = (words.length * 250) + 100; // 250ms delay + 100ms buffer
+    
+    setTimeout(() => {
+      if (button) {
+        button.style.visibility = "visible";
+        button.style.opacity = "0";
+        button.style.animation = "fadeInButton 0.5s ease-in-out forwards";
+      }
+    }, totalAnimationTime);
+    
+  }, 3000); 
+});
+
+window.addEventListener('load', () => {
+    const heading = document.querySelector('.herobanner_heading');
+    
+    gsap.fromTo(heading, 
+        {
+            scale: 0.3,
+            opacity: 0,
+            color: "#00470F"
+        },
+        {
+            scale: 1,
+            opacity: 1,
+            color: "#fff",
+            duration: 3.5,
+            delay: 0.5,
+            ease: "back.out(1.4)"
+        }
+    );
+    
+});
+
+</script>

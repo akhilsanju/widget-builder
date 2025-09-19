@@ -1,0 +1,51 @@
+{
+  "marqueeText": [
+    {
+      "marquee-text-title": "Lorem Ipsum"
+    }
+  ],
+  "contentmargin": {
+    "top": {
+      "value": "0",
+      "type": "px"
+    },
+    "right": {
+      "value": "0",
+      "type": "px"
+    },
+    "bottom": {
+      "value": "0",
+      "type": "px"
+    },
+    "left": {
+      "value": "0",
+      "type": "px"
+    }
+  },
+  "contentMobilePadding": {
+    "top": {
+      "value": "34",
+      "type": "px"
+    },
+    "right": {
+      "value": "26",
+      "type": "px"
+    },
+    "bottom": {
+      "value": "34",
+      "type": "px"
+    },
+    "left": {
+      "value": "26",
+      "type": "px"
+    }
+  },
+  "marquee-text-title-font-size": {
+    "value": 30,
+    "type": "px"
+  },
+  "marquee-text-title-font-size-mobile": {
+    "value": 20,
+    "type": "px"
+  }
+}

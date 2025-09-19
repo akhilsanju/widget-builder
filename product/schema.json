@@ -1,0 +1,108 @@
+[
+    {
+    "type": "hidden",
+    "settings": [
+      {
+        "type": "graphQl",
+        "id": "graphQueries",
+        "typeMeta": {
+          "mappings": {
+            "productId": {
+              "reads": "products.*.productId",
+              "type": "Int!"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Featured Tab Settings",
+        "settings": [
+          {
+            "type": "color",
+            "id": "tab-text-color",
+            "label": "Tab Text Color",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "active-tab-text-color",
+            "label": "Active Tab Text Color",
+            "default": "red"
+          },
+          {
+            "type": "number",
+            "id": "tab_font_size_desktop",
+            "label": "Font Size (Desktop)",
+            "default": {
+              "value": 15,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "tab_font_size_tablet",
+            "label": "Font Size (Tablet)",
+            "default": {
+              "value": 15,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "tab_font_size_mobile",
+            "label": "Font Size (Mobile)",
+            "default": {
+              "value": 12,
+              "type": "px"
+            }
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "type": "array",
+    "label": "Featured Product Heading",
+    "id": "featured-product-tabs",
+    "defaultCount": 1,
+    "entryLabel": "Tab Header",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "input",
+                "label": "Tab Title",
+                "id": "featured-product-tab-title",
+                "default": "Lorem Ipsum"
+              },
+              {
+                  "type": "code",
+                  "label": "Content",
+                  "id": "TabContent",
+                  "default": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae fugiat nam quod tempora aspernatur ea voluptatibus? Temporibus modi nisi amet culpa commodi nostrum excepturi magnam debitis quam, atque similique, mollitia tenetur molestiae ipsam optio libero sint sed maiores architecto esse voluptatibus! Suscipit, doloribus itaque error distinctio repellendus doloremque ipsa pariatur!"
+              },
+                {
+                "type": "input",
+                "label": "Enter Custom Field Key",
+                "id": "customfield-key",
+                "default": "Lorem Ipsum"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

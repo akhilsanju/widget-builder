@@ -1,0 +1,103 @@
+[
+  {
+    "type": "array",
+    "label": "Text",
+    "id": "marqueeText",
+    "defaultCount": 1,
+    "entryLabel": "Tab Header",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "input",
+                "label": "Marquee Title",
+                "id": "marquee-text-title",
+                "default": "Lorem Ipsum"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+    {
+    "type": "tab",
+    "label": "Text Settings",
+    "sections": [
+      {
+        "label": "Text Settings",
+        "settings": [
+          {
+            "type": "boxModel",
+            "label": "Container Margin(Desktop)",
+            "id": "contentmargin",
+            "default": {
+              "top": {
+                "value": "0",
+                "type": "px"
+              },
+              "right": {
+                "value": "0",
+                "type": "px"
+              },
+              "bottom": {
+                "value": "0",
+                "type": "px"
+              },
+              "left": {
+                "value": "0",
+                "type": "px"
+              }
+            }
+          },
+          {
+            "type": "boxModel",
+            "label": "Content Margin(Mobile)",
+            "id": "contentMobilemargin",
+            "default": {
+              "top": {
+                "value": "34",
+                "type": "px"
+              },
+              "right": {
+                "value": "26",
+                "type": "px"
+              },
+              "bottom": {
+                "value": "34",
+                "type": "px"
+              },
+              "left": {
+                "value": "26",
+                "type": "px"
+              }
+            }
+          },
+         {
+                "type": "number",
+                "label": "Marquee Title Font Size",
+                "id": "marquee-text-title-font-size",
+                "default": {
+                "value": 30,
+                "type": "px"
+             }
+              },
+              {
+                "type": "number",
+                "label": "Marquee Title Font Size",
+                "id": "marquee-text-title-font-size-mobile",
+                "default": {
+                "value": 20,
+                "type": "px"
+              }
+              }
+        ]
+      }
+    ]
+  }
+]

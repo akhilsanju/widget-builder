@@ -1,0 +1,448 @@
+
+    <style>
+
+        .category-block-container {
+            max-width: 1920px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            height: 100%;
+            padding: 0;
+        }
+        @media(min-width:1260px){
+             .category-block-container {
+                padding: 0 50px;
+             }
+        }
+
+        .block-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            z-index: 0;
+            background-repeat: no-repeat !important;
+        }
+
+        .block-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+        transition: opacity 0.3s ease;
+        z-index: -1;
+        opacity: 1;
+        }
+
+       @media (min-width:768px){
+        .resources:hover .card-title,
+        .resources:hover .card-subtitle,
+        .resources:hover .card-description{
+            color: {{card3TitleColoHover}};
+        }
+        
+        .card-large:hover .card-title,
+        .card-large:hover .card-subtitle,
+        .card-large:hover .card-description
+         {
+            color: {{card1TitleColorHover}};
+        }
+
+        .fabrication:hover .card-title,
+        .fabrication:hover .card-subtitle,
+        .fabrication:hover .card-description{
+            color: {{card2TitleColorHover}};
+            }
+
+        .block-card::before{
+        opacity: 0;
+        }
+             
+        .block-card:hover::before {
+        opacity: 1;
+        }
+
+        }
+
+        @media (max-width:768px){
+        .resourcesr .card-title,
+        .resources .card-subtitle,
+        .resources .card-description{
+            color: {{card3TitleColoHover}} !important;
+        }
+        
+        .card-large .card-title,
+        .card-large .card-subtitle,
+        .card-large .card-description
+         {
+            color: {{card1TitleColorHover}} !important;
+        }
+
+        .fabrication .card-title,
+        .fabrication .card-subtitle,
+        .fabrication .card-description{
+            color: {{card2TitleColorHover}} !important;
+            }
+        .block-card .card-subtitle{
+        display: none;
+        }
+        }
+
+        .block-card .card-title{
+            width:fit-content;
+            padding-bottom:5px;
+        }
+
+     @media (min-width:768px){
+        .card-large:hover .card-title{
+            border-bottom: 1px solid {{card1TitleColoHover}};
+        }
+        .resources:hover .card-title{
+            border-bottom: 1px solid {{card3TitleColoHover}};
+        }
+        .fabrication:hover .card-title{
+            border-bottom: 1px solid {{card2TitleColoHover}};
+        }
+    }
+
+     @media (max-width:768px){
+        .card-large .card-title{
+            border-bottom: 1px solid {{card1TitleColoHover}};
+        }
+        .resources .card-title{
+            border-bottom: 1px solid {{card3TitleColoHover}};
+        }
+        .fabrication .card-title{
+            border-bottom: 1px solid {{card2TitleColoHover}};
+        }
+     }
+
+        .card-large {
+            grid-row: span 20;
+            background: url('{{cardimage.src}}');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        .card-medium {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            max-width: 450px;
+        }
+
+        .card-large .card-content h3 {
+            color: {{card1TitleColor}};
+        }
+
+        .card-large .card-content p {
+            color: {{card1TitleColor}};
+        }
+
+        .fabrication .card-content h3, p {
+            color: {{card2TitleColor}};
+        }
+        .resources .card-content h3, p{
+            color: {{card3TitleColor}};
+        }
+
+        .card-title {
+        font-family: 'Karla';
+        font-weight: 600;
+        font-size: {{font_size_text.value}}px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-transform: uppercase;     
+        line-height: 24px;  
+        width:fit-content; 
+        }
+
+        .card-subtitle {
+            opacity: 0.9;
+            margin: 0;
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: {{font_size_subtext.value}}px;
+            line-height: 24px;
+        }
+
+        .card-description {
+            font-size: {{font_size_subtext.value}}px;
+            line-height: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            margin: 0;
+        }
+
+        @media (min-width:768px){
+        .card-description {
+           opacity: 0;
+           max-height: 0;
+        }
+        .block-card:hover .card-description {
+            opacity: 1;
+            max-height: 200px;
+        }
+        }
+
+        .arrow-icon {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width:768px){
+         .block-card:hover .arrow-icon{
+            background: #ffffff;
+            border: unset;
+         }
+         
+        .card-large .arrow-icon {
+          border: 1px solid #000000;
+        }
+
+        .fabrication .arrow-icon{
+          border: 1px solid #fff;
+        }
+        
+        .resources .arrow-icon{
+          border: 1px solid #fff;
+        }
+        }
+
+        @media (max-width:768px){
+         .arrow-icon{
+            background: #ffffff;
+         }
+         .arrow-icon img{
+           filter: brightness(0)
+         }
+        }
+
+        .block-card:hover .arrow-icon img{
+            display: none;
+        }
+
+        .block-card:hover .arrow-icon::after{
+            content: '';
+            position: absolute;
+            left: 9px;
+            background-repeat: no-repeat;
+            top: 8px;
+            object-fit: contain;
+            width: 20px;
+            height: 15px;
+            background-image: url('https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/categoryblockarrow.png?t=1756385541');
+        }
+
+        /* .card-large[arrowColor] .arrow-svg path {
+        fill: {{arrowColor}};
+        } */
+
+        .cardlink{
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+        }
+
+        .fabrication {
+            background: url('{{cardimage2.src}}');
+            grid-row: span 10;
+            height: 100%;
+            background-size: cover;
+        }
+
+        .resources {
+            background: url('{{cardimage3.src}}');
+            grid-row: span 10;
+            height: 100%;
+            background-size: cover;
+        }
+
+         @media (max-width: 1024px) {
+         .card-title {
+                font-size: {{font_size_subtextTab.value}}px;
+            }
+        .card-description,.card-subtitle{
+                font-size: {{font_size_subtextTab.value}}px;
+        }
+        }
+
+        @media (max-width: 768px) {
+            .category-block-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                height: auto;
+            }
+
+            .block-card {
+                grid-row: span 30;
+            }
+
+            .card-title {
+                font-size: {{title_font_size_text_mob.value}}px;
+            }
+
+             .card-description,.card-subtitle{
+                max-width:250px;
+                font-size: {{font_size_subtextMob.value}}px;
+             }
+        }
+    </style>
+
+
+    <div class="category-block-container">
+        <div class="block-card card-large buy-plastic" arrowColor="{{arrowpngcolor}}">
+            <a class="cardlink" href="{{cardurl}}">
+            <div class="card-content">
+                <h3 class="card-title">{{cardTitle}}</h3>
+                <p class="card-subtitle">{{cardsubTitle}}</p>
+                <p class="card-description widget-card-discription">
+                   {{cardsubTitlediscription}}
+                </p>
+            </div>
+            <div class="arrow-icon">
+             <img src="https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/categoryblockarrow.png?t=1756385541" alt="image">
+            </div>
+            </a>
+        </div>
+
+        <div class="block-card card-medium fabrication">
+           <a class="cardlink" href="{{cardurl2}}">
+            <div class="card-content">
+                <h3 class="card-title">{{card2Title}}</h3>
+                <p class="card-subtitle">{{card2subTitle}}</p>
+                <p class="card-description widget-card-discription">
+                    {{card2discription}}
+                </p>
+            </div>
+            <div class="arrow-icon"><img src="https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/flowbite-arrow-up-outline.png?t=1756464048')"
+                 alt="arrow"></div>
+            </a>
+        </div>
+
+
+        <div class="block-card card-medium resources">
+            <a class="cardlink" href="{{cardurl3}}">
+            <div class="card-content">
+                <h3 class="card-title">{{card3Title}}</h3>
+                <p class="card-subtitle">{{card3subTitle}}</p>
+                <p class="card-description widget-card-discription">
+                    {{card3discription}}
+                </p>
+            </div>
+           <div class="arrow-icon">
+            <img src="https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/flowbite-arrow-up-outline.png?t=1756464048')"
+                 alt="arrow"></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/css-filter-converter/dist/index.umd.js"></script>
+
+    <script>
+
+window.addEventListener('load', function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Set initial states
+    gsap.set('.buy-plastic', { x: -200, opacity: 0 });
+    gsap.set('.fabrication', { x: 200, opacity: 0 });
+    gsap.set('.resources', { x: 200, opacity: 0 });
+
+    // Create timeline with ScrollTrigger
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.category-block-container',
+            start: 'top 85%',
+            end: 'bottom 10%',
+            toggleActions: 'play none none reverse',
+            scrub: false
+        }
+    });
+
+    // Animate cards with smoother stagger
+    tl.to('.buy-plastic', {
+        x: 0,
+        opacity: 1,
+        duration: .5,
+        ease: 'power2.out'
+    })
+    .to('.fabrication', {
+        x: 0,
+        opacity: 1,
+        duration: .5,
+        ease: 'power2.out'
+    }, '-=0.5') 
+    .to('.resources', {
+        x: 0,
+        opacity: 1,
+        duration: .5,
+        ease: 'power2.out'
+    }, '-=0.5');
+
+    document.querySelectorAll('.block-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const maxLines = 5;
+  const elements = document.querySelectorAll('.widget-card-discription');
+
+  elements.forEach(el => {
+    const lineHeight = parseFloat(getComputedStyle(el).lineHeight);
+    const maxHeight = lineHeight * maxLines;
+
+    let originalText = el.textContent;
+
+    while (el.scrollHeight > maxHeight && originalText.length > 0) {
+      originalText = originalText.replace(/\W*\s(\S)*$/, '...');
+      el.textContent = originalText;
+    }
+  });
+});
+
+
+
+    </script>

@@ -1,0 +1,67 @@
+[
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "General Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "background_video",
+            "label": "Background Video ID(Youtube)",
+            "default": "MqKIy6Xys1U",
+            "typeMeta": {
+              "placeholder": "Enter Youtube Video ID"
+            }
+          },
+          {
+            "type": "input",
+            "id": "video_title",
+            "label": "Video Title",
+            "default": "New & Used Caravans"
+          },
+          {
+            "type": "input",
+            "id": "video_description",
+            "label": "Video Description",
+            "default": "Sell & Buy Near You"
+          },
+          {
+            "type": "input",
+            "id": "video_button_text",
+            "label": "Video Button Text",
+            "default": "Shop Now"
+          },
+          {
+            "type": "input",
+            "id": "video_button_link",
+            "label": "Video Button Link",
+            "default": "/#"
+          },
+          {
+            "type": "boolean",
+            "id": "hide_video_mobile",
+            "label": "Hide the video on mobile devices",
+            "default": false
+          },
+          {
+            "type": "imageManager",
+            "id": "background_image",
+            "label": "Mobile View Banner Image",
+            "default": {
+              "src": "",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "boolean",
+            "id": "hide_text_mobile",
+            "label": "Hide the text on mobile devices",
+            "default": true
+          }
+        ]
+      }
+    ]
+  }
+]

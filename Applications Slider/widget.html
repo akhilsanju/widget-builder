@@ -1,0 +1,293 @@
+
+<style>
+        
+
+.application-outer-cotainer .container{
+    padding-right: 0 !important;
+}
+
+        /* Main application card */
+       .application-container .application-card {
+            background: #ffffff;
+            border-radius: 20px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            padding: 54px 0;
+            margin: 0px;
+        }
+
+        .application-title {
+            font-size: {{application-text-mobile.value}}px;
+            color: {{application-text-color}};
+            margin: 0;
+            line-height: 100%;
+            margin: 20px 0 30px 0;
+            text-transform: uppercase;
+        }
+
+       .application-container .slick-list{
+         padding-top: 67px; 
+         margin: 0 -15px; 
+        }
+        
+        @media(max-width:767px){
+        .application-container .slick-list{
+         padding-top: 67px; 
+         margin: 0 -10px 0 0;
+        }
+        .slider-application-{{_.id}} .slick-slide > div{
+           margin: 0 5px 0 0; 
+           height: 100%;
+        }  
+        }
+
+       .application-card #application-btn{
+            padding: 6px 30px 6px 30px;
+            background: {{application-btn-background-hover}};
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+            transform: translate(-50%, -50%);
+            transition: background .3s ease;
+            border-radius: 30px;
+            border: 1px solid {{application-btn-color-border-hover}};
+        }
+
+       .application-card #application-btn a{
+        font-family: 'Karla';
+        font-style: Medium; 
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: {{application-btn-color-hover}};
+        }
+        
+        /* application icon container */
+        .application-icon-container {
+            width: 100px;
+            height: 100px;
+            background: #1a5b1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: -110px;
+            padding: 26px;
+        }
+        
+        /* application icon SVG */
+        .application-icon {
+            width: 60px;
+            height: 60px;
+            stroke: #ffffff;
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .slider-application-{{_.id}} .slick-slide > div{
+           margin: 0 5px; 
+           height: 100%;
+        }  
+        
+    .application-container-title h2{
+        font-weight: 500;
+        margin-bottom: 30px;
+        font-size: {{application-main-text-mobile.value}}px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color:{{application-main-text-color}};
+        text-transform: uppercase;
+       }
+
+        
+  @media (min-width: 767px){
+
+      .application-container-title h2{
+        font-size: {{application-main-text-size.value}}px;
+        margin-bottom:83px;
+       }
+
+        .slider-application-{{_.id}} .slick-slide > div{
+           margin: 0 15px 0 0; 
+           height: 100%;
+        } 
+
+        .application-icon-container {
+            width: 151px;
+            height: 151px;
+            background: #1a5b1a;
+            scale: 1;
+            margin-top: -65px;
+        }
+
+        .application-card:hover .application-icon-container{
+            scale: .8;
+            transition: scale .5s ease;
+        }
+
+        .application-title {
+            font-size: {{application-text-size.value}}px;
+            font-weight: 600;
+            color: {{application-text-color}};
+            text-transform: uppercase;
+            letter-spacing: 0%;
+            margin: 0;
+            line-height: 100%;
+            margin: 30px 0 47px 0;
+        }
+
+        .application-card #application-btn{
+        padding: 8px 66px 8px 66px;
+        background: {{application-btn-background}};
+        border: 1px solid {{application-btn-color-border}};
+        border-radius: 30px;
+        margin-bottom: 20px;
+        display: none;    
+        position: absolute;
+        left: 50%;
+        bottom: -30px;
+        transform: translate(-50%, -50%);
+        transition: background .3s ease;
+        }
+
+        .application-card:hover #application-btn{
+            display: block;
+        }
+
+        .application-card:hover .application-info .application-title{
+            transform: translateY(-27px);
+            transition: transform .3s ease;
+        }
+
+       .application-card #application-btn a{
+        font-family: 'Karla';
+        font-style: Medium; 
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: {{application-btn-color}};
+        }
+
+    .application-card #application-btn:hover{
+        background-color:{{application-btn-background-hover}};
+        border-color:{{application-btn-color-border-hover}};
+    }    
+
+    .application-card #application-btn:hover a{
+        color:{{application-btn-color-hover}};
+    }    
+
+           .application-container .application-card {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 0;
+            margin: 0px;
+        }
+  }
+
+  @media (min-width:991px){
+  .application-outer-cotainer{
+    width:100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  }
+
+
+</style>
+
+<div class="application-outer-cotainer">
+  <div class="widget-full-width-container container">
+    
+    <div class="application-container-title">
+      <h2>{{application-main-text}}</h2>
+    </div> 
+
+    <div class="application-container slider-application-{{_.id}}">
+      {{#each Applicationslider}}
+      <article class="application-card" role="region" aria-labelledby="application-title-{{@index}}">
+        
+        <div class="application-icon-container" aria-hidden="true">
+          <div class="image">
+            <img src="{{applicationcardimage.src}}" alt="{{applicationSliderText}}">
+          </div>
+        </div>
+
+        <div class="application-info">
+          <h3 id="application-title-{{@index}}" class="application-title">
+            {{applicationSliderText}}
+          </h3>
+        </div>
+
+        <div id="application-btn">
+          <a href="{{application-btn-url}}" aria-label="{{../application-btn-text}} - {{applicationSliderText}}">
+            {{../application-btn-text}}
+          </a>
+        </div>
+
+      </article>
+      {{/each}}
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    
+    $(".slider-application-{{_.id}}").slick({
+      autoplay: false,
+      autoplaySpeed: 2000,
+      speed: 600,
+      slidesToShow: 4.9,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite:false,
+      responsive: [
+        {
+          breakpoint: 1440,
+          settings: {
+            slidesToShow: 4.9
+          },
+        },
+                {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4.6,
+            slidesToScroll: 1
+           },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3.6,
+            slidesToScroll: 1
+           },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1.8,
+            slidesToScroll: 1
+           },
+        },
+      ],
+    });
+</script>

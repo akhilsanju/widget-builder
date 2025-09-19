@@ -1,0 +1,110 @@
+{
+  "featuredDeal-fullwidth-design": true,
+  "HideAbouWidget": true,
+  "fdContentAlign": {
+    "horizontal": "left",
+    "vertical": "bottom"
+  },
+  "contentPadding": {
+    "top": {
+      "value": "96",
+      "type": "px"
+    },
+    "right": {
+      "value": "72",
+      "type": "px"
+    },
+    "bottom": {
+      "value": "92",
+      "type": "px"
+    },
+    "left": {
+      "value": "72",
+      "type": "px"
+    }
+  },
+  "contentMobilePadding": {
+    "top": {
+      "value": "34",
+      "type": "px"
+    },
+    "right": {
+      "value": "26",
+      "type": "px"
+    },
+    "bottom": {
+      "value": "34",
+      "type": "px"
+    },
+    "left": {
+      "value": "26",
+      "type": "px"
+    }
+  },
+  "bckColor": "#F5F5F5",
+  "imageUrlDesk": {
+    "src": "https://cdn11.bigcommerce.com/s-x2ggalr5r0/images/stencil/original/image-manager/image-241.jpg?t=1726814715",
+    "type": "IMAGE_MANAGER"
+  },
+  "imageUrlMob": {
+    "src": "https://cdn11.bigcommerce.com/s-x2ggalr5r0/images/stencil/original/image-manager/image-241.jpg?t=1726814715",
+    "type": "IMAGE_MANAGER"
+  },
+  "unsetheight": "show",
+  "fdImageHeightDesk": {
+    "value": 796,
+    "type": "px"
+  },
+  "fdImageHeightSmallLap": {
+    "value": 500,
+    "type": "px"
+  },
+  "fdImageHeightTab": {
+    "value": 400,
+    "type": "px"
+  },
+  "btnBckColor": "#ffffff",
+  "btnTextColor": "#000000",
+  "btnBckColorHover": "#ffffff",
+  "btnTextColorHover": "#000000",
+  "displayControls": true,
+  "fdTitle": "BUY ONE, GET ONE 50% OFF",
+  "fdContent": "Gorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molevaestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla ipsum dolor sit ametrea",
+  "txtColor": "#ffffff",
+  "featuredDeal-heading-seo-tag": "h3",
+  "fdTitleSizeDesk": {
+    "value": 30,
+    "type": "px"
+  },
+  "fdTitleSizeTab": {
+    "value": 26,
+    "type": "px"
+  },
+  "fdTitleSizeMob": {
+    "value": 18,
+    "type": "px"
+  },
+  "featuredDeal-content-seo-tag": "h3",
+  "fdContentSizeDesk": {
+    "value": 16,
+    "type": "px"
+  },
+  "fdContentSizeMob": {
+    "value": 12,
+    "type": "px"
+  },
+  "btnArray": [
+    {
+      "btnText": "SHOP",
+      "btnLink": "/"
+    },
+    {
+      "btnText": "SHOP",
+      "btnLink": "/"
+    },
+    {
+      "btnText": "SHOP",
+      "btnLink": "/"
+    }
+  ]
+}

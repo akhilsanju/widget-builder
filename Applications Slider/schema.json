@@ -1,0 +1,176 @@
+[
+  {
+    "type": "array",
+    "label": "Text",
+    "id": "Applicationslider",
+    "defaultCount": 6,
+    "entryLabel": "Tab Header",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "input",
+                "label": "Title Title",
+                "id": "applicationSliderText",
+                "default": "Lorem Ipsum"
+              },
+          {
+            "type": "input",
+            "id": "application-btn-url",
+            "label": "Button Url",
+            "default": "View"
+          },
+
+            {
+            "type": "imageManager",
+            "id": "applicationcardimage",
+            "label": "Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/-296615328.png?t=1756794460",
+              "type": "IMAGE_MANAGER"
+            }
+          }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Button Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "application-btn-text",
+            "label": "Button Text",
+            "default": "View"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-color",
+            "label": "Button Text Color",
+            "default": "#00470F"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-color-border",
+            "label": "Button Border Color",
+            "default": "#00470F"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-color-border-hover",
+            "label": "Button Border Color On Hover",
+            "default": "#00470F"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-background",
+            "label": "Button Background Color",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-color-hover",
+            "label": "Button Text Color On Hover",
+            "default": "#fff"
+          },
+          {
+            "type": "color",
+            "id": "application-btn-background-hover",
+            "label": "Button Background Color On Hover",
+            "default": "#00470F"
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Card Text Settings",
+        "settings": [
+          {
+            "type": "color",
+            "id": "application-text-color",
+            "label": "Card Text Color",
+            "default": "#00470F"
+          },
+                   {
+            "type": "number",
+            "id": "application-text-size",
+            "label": "Card Title Font Size",
+            "default": {
+              "value": 15,
+              "type": "px"
+            }
+          },
+                   {
+            "type": "number",
+            "id": "application-text-mobile",
+            "label": "Card Title Mobile Font Size",
+            "default": {
+              "value": 16,
+              "type": "px"
+            }
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Design",
+    "sections": [
+      {
+        "label": "Main Title Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "application-main-text",
+            "label": "Main Title",
+            "default": "SHOP Materials"
+          },
+                   {
+            "type": "number",
+            "id": "application-main-text-size",
+            "label": "Title Font Size",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "application-main-text-mobile",
+            "label": "Title Mobile Font Size",
+            "default": {
+              "value": 15,
+              "type": "px"
+            }
+          },
+                    {
+            "type": "color",
+            "id": "application-main-text-color",
+            "label": "Text Color",
+            "default": "#00470F"
+          }
+        ]
+      }
+
+    ]
+  }
+]

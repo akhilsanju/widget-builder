@@ -1,0 +1,25 @@
+<div data-section-id="{{_.id}}""></div>
+
+<style>
+    [data-section-id="{{_.id}}"] {
+        height: {{mobileSpacing.value}}px;
+    }
+
+    @media screen and (min-width: 720px) {
+        [data-section-id="{{_.id}}"] {
+            height: {{tabletSpacing.value}}px;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        [data-section-id="{{_.id}}"] {
+            height: {{desktopSpacing.value}}px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        [data-section-id="{{_.id}}"] {
+            height: {{wideScreenSpacing.value}}px;
+        }
+    } 
+</style>

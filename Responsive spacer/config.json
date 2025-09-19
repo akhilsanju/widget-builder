@@ -1,0 +1,18 @@
+{
+  "mobileSpacing": {
+    "value": 72,
+    "type": "px"
+  },
+  "tabletSpacing": {
+    "value": 72,
+    "type": "px"
+  },
+  "desktopSpacing": {
+    "value": 100,
+    "type": "px"
+  },
+  "wideScreenSpacing": {
+    "value": 100,
+    "type": "px"
+  }
+}
