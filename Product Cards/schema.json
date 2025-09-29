@@ -1,0 +1,289 @@
+[
+  {
+    "type": "hidden",
+    "settings": [
+      {
+        "type": "graphQl",
+        "id": "graphQueries",
+        "typeMeta": {
+          "mappings": {
+            "productId": {
+              "reads": "products.*.productId",
+              "type": "Int!"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Title",
+    "sections": [
+      {
+        "label": "Heading Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "cardWidget_sectionTitle",
+            "label": "Section Title",
+            "default": "FEATURED PRODUCTS"
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionTitle_font_size_desktop",
+            "label": "Font Size(Desktop)",
+            "default": {
+              "value": 36,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionTitle_font_size_tablet",
+            "label": "Font Size(Tablet)",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionTitle_font_size_mobile",
+            "label": "Font Size(Mobile)",
+            "default": {
+              "value": 24,
+              "type": "px"
+            }
+          },
+          {
+            "type": "input",
+            "id": "cardWidget_sectionButton",
+            "label": "Section Button",
+            "default": "View All Brands"
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionButton_font_size_desktop",
+            "label": "Font Size(Desktop)",
+            "default": {
+              "value": 14,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionButton_font_size_tablet",
+            "label": "Font Size(Tablet)",
+            "default": {
+              "value": 12,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "cardWidget_sectionButton_font_size_mobile",
+            "label": "Font Size(Mobile)",
+            "default": {
+              "value": 12,
+              "type": "px"
+            }
+          },
+          {
+            "type": "input",
+            "id": "cardWidget_buttonLink",
+            "label": "Button Link",
+            "default": "#"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Promotional Banner",
+        "settings": [
+          {
+            "type": "boolean",
+            "label": "Enable Promotional Banner",
+            "id": "enable_card_btn",
+            "default": true
+          },
+          {
+            "type": "input",
+            "id": "featured_title",
+            "label": "Featured Title",
+            "default": "Dewalt Cordless Drill"
+          },
+          {
+            "type": "number",
+            "id": "featured_title_font_size_desktop",
+            "label": "Font Size(Desktop)",
+            "default": {
+              "value": 26,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "featured_title_font_size_tablet",
+            "label": "Font Size(Tablet)",
+            "default": {
+              "value": 22,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "featured_title_font_size_mobile",
+            "label": "Font Size(Mobile)",
+            "default": {
+              "value": 18,
+              "type": "px"
+            }
+          },
+          {
+            "type": "color",
+            "id": "featured_title_color",
+            "label": "Featured Title Color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "input",
+            "id": "featured_price",
+            "label": "Subtitle",
+            "default": "$99.00"
+          },
+          {
+            "type": "number",
+            "id": "featured_price_font_size_desktop",
+            "label": "Font Size(Desktop)",
+            "default": {
+              "value": 22,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "featured_price_font_size_tablet",
+            "label": "Font Size(Tablet)",
+            "default": {
+              "value": 20,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "id": "featured_price_font_size_mobile",
+            "label": "Font Size(Mobile)",
+            "default": {
+              "value": 18,
+              "type": "px"
+            }
+          },
+          {
+            "type": "color",
+            "id": "featured_price_color",
+            "label": "Subtitle Color",
+            "default": "#ffff00"
+          },
+          {
+            "type": "input",
+            "id": "featured_button",
+            "label": "Featured Button Text",
+            "default": "ADD TO CART"
+          },
+          {
+            "type": "input",
+            "id": "featured_button_link",
+            "label": "Featured Button Link",
+            "default": "/shop"
+          },
+          {
+            "type": "imageManager",
+            "id": "imageUrl",
+            "label": "Card Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-wdluimcryw/images/stencil/original/image-manager/image-350.png",
+              "type": "IMAGE_MANAGER"
+            }
+          },
+          {
+            "type": "color",
+            "id": "featured_card_bg",
+            "label": "Card Background Color",
+            "default": "#0153A0"
+          },
+          {
+            "type": "select",
+            "label": "Text Position",
+            "id": "text_position",
+            "default": "bottom",
+            "typeMeta": {
+              "selectOptions": [
+                {
+                  "label": "top",
+                  "value": "top"
+                },
+                {
+                  "label": "bottom",
+                  "value": "bottom"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Attribute Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "target_attribute",
+            "label": "Target Attribute",
+            "default": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "array",
+    "label": "Product List",
+    "id": "products",
+    "defaultCount": 4,
+    "entryLabel": "Product",
+    "thumbnail": {},
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Product",
+        "sections": [
+          {
+            "label": "Product",
+            "settings": [
+              {
+                "type": "productId",
+                "label": "Product",
+                "id": "productId",
+                "default": "",
+                "typeMeta": {
+                  "placeholder": "Search by name or SKU"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

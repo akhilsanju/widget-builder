@@ -1,0 +1,72 @@
+{
+  "cardWidget_sectionTitle": "FEATURED PRODUCTS",
+  "cardWidget_sectionTitle_font_size_desktop": {
+    "value": 36,
+    "type": "px"
+  },
+  "cardWidget_sectionTitle_font_size_tablet": {
+    "value": 30,
+    "type": "px"
+  },
+  "cardWidget_sectionTitle_font_size_mobile": {
+    "value": 24,
+    "type": "px"
+  },
+  "cardWidget_sectionButton": "View All Brands",
+  "cardWidget_sectionButton_font_size_desktop": {
+    "value": 14,
+    "type": "px"
+  },
+  "cardWidget_sectionButton_font_size_tablet": {
+    "value": 12,
+    "type": "px"
+  },
+  "cardWidget_sectionButton_font_size_mobile": {
+    "value": 12,
+    "type": "px"
+  },
+  "cardWidget_buttonLink": "#",
+  "enable_card_btn": true,
+  "featured_title": "Dewalt Cordless Drill",
+  "featured_title_font_size_desktop": {
+    "value": 26,
+    "type": "px"
+  },
+  "featured_title_font_size_tablet": {
+    "value": 22,
+    "type": "px"
+  },
+  "featured_title_font_size_mobile": {
+    "value": 18,
+    "type": "px"
+  },
+  "featured_title_color": "#ffffff",
+  "featured_price": "$99.00",
+  "featured_price_font_size_desktop": {
+    "value": 22,
+    "type": "px"
+  },
+  "featured_price_font_size_tablet": {
+    "value": 20,
+    "type": "px"
+  },
+  "featured_price_font_size_mobile": {
+    "value": 18,
+    "type": "px"
+  },
+  "featured_price_color": "#ffff00",
+  "featured_button": "ADD TO CART",
+  "featured_button_link": "/shop",
+  "imageUrl": {
+    "src": "https://cdn11.bigcommerce.com/s-wdluimcryw/images/stencil/original/image-manager/image-350.png",
+    "type": "IMAGE_MANAGER"
+  },
+  "featured_card_bg": "#0153A0",
+  "text_position": "bottom",
+  "products": [
+    {},
+    {},
+    {},
+    {}
+  ]
+}

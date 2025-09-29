@@ -29,17 +29,24 @@
         width: 100%;
         background-repeat: no-repeat;
         height: {{carouselHeight.value}}px;
+        positon: relative;
     }
 
     .hero-banner-container-{{_.id}} .hb-content-container{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         height: 100%;
         padding: 0 10.5px;
         width: 100%;
         z-index: 4;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
     }
+    
     .hero-banner-container-{{_.id}} .hb-content-container .herobanner_heading{
         text-transform: uppercase;
         color:{{headingFontColor}};
@@ -49,12 +56,12 @@
         font-family: 'karla';
     }
 
-    .video-hb-content-container{
+    /* .video-hb-content-container{
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
-    }
+    } */
 
   .text-btn-wrapper{
     position: absolute;
@@ -333,7 +340,7 @@
         .hero-banner-container-{{_.id}} .hero-banner{
             height: {{carouselHeightMob.value}}px;
         }
-      }
+    }
 
 
 .video-down-arrow-container {
@@ -373,6 +380,40 @@
   }
 }
 
+.hero-banner-container-{{_.id}} .hero-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: {{BgOverlay}};
+  z-index: 1;
+  pointer-events: none; 
+}
+
+    .hero-banner-container-{{_.id}} .hb-content-container .herobanner_para{
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    max-width: 360px;
+    margin-top: 10px;
+    }
+
+@media (min-width: 768px) {
+    .hero-banner-container-{{_.id}} .hb-content-container .herobanner_para{
+    font-size: 20px;
+    max-width: 800px;
+    margin-top: 20px;
+    }
+}
+
+
+
 
     </style>
     
@@ -381,11 +422,16 @@
        data-image-desktop="{{imageUrlDesk.src}}">
         <div class= "hero-banner container desk" style= "max-width: 100%;
          background-image: url('{{imageUrlDesk.src}}');" aria-label= "{{altTextDesk}} ">
+         <div class="hero-banner-overlay"></div>
             <div class= "hb-content-container">
             {{#if herobanner-show-heading}}
             <{{herobannerheading-seo-tag}} class="herobanner_heading">{{fwHeading}}</{{herobannerheading-seo-tag}}>
+            {{/if}}   
+            {{#if enablePara}}
+            <p class="herobanner_para">{{fwparagraph}}</p> 
             {{/if}}                
             </div>
+    {{#if BottomTextHide}}        
     <div class="text-btn-wrapper">
     <div class="hero-subText">
         <p id="bottom-text" class="hidden-text">{{BottomText}}</p>
@@ -398,6 +444,7 @@
         </div>
       </div>
     </div>
+    {{/if}}
     </div>
     </div>
     {{else}}
@@ -410,8 +457,13 @@
       <div class= "hb-content-container video-hb-content-container">
             {{#if herobanner-show-heading}}
             <{{herobannerheading-seo-tag}} class="herobanner_heading">{{fwHeading}}</{{herobannerheading-seo-tag}}>
-            {{/if}}                
+            {{/if}} 
+
+            {{#if enablePara}}
+            <p class="herobanner_para">{{fwparagraph}}</p> 
+            {{/if}}              
      </div>   
+    {{#if BottomTextHide}}     
     <div class="text-btn-wrapper">
     <div class="hero-subText">
         <p id="bottom-text" class="hidden-text">{{BottomText}}</p>
@@ -424,6 +476,7 @@
         </div>
       </div>
     </div>
+    {{/if}}
     <div class="video-down-arrow-container">
     <div class="video-down-arrow">
       <img src="https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/flowbite-arrow-up-outline-1-.png?t=1756891712" alt="downarrow">
@@ -434,7 +487,6 @@
     </div>
 
 {{/if}}
-chatgpt
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 

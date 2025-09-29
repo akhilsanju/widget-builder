@@ -1,0 +1,66 @@
+[
+  {
+    "type": "hidden",
+    "settings": [
+      {
+        "type": "graphQl",
+        "id": "graphQueries",
+        "typeMeta": {
+          "mappings": {
+            "productId": {
+              "reads": "products.*.productId",
+              "type": "Int!"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "tab",
+    "label": "Settings",
+    "sections": [
+      {
+        "label": "Settings",
+        "settings": [
+          {
+            "type": "input",
+            "id": "featured_title",
+            "label": "Featured Title",
+            "default": "Featured Items"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "array",
+    "label": "Product List",
+    "id": "products",
+    "defaultCount": 4,
+    "entryLabel": "Product",
+    "thumbnail": {},
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Product",
+        "sections": [
+          {
+            "label": "Product",
+            "settings": [
+              {
+                "type": "productId",
+                "label": "Product",
+                "id": "productId",
+                "default": "",
+                "typeMeta": {
+                  "placeholder": "Search by name or SKU"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

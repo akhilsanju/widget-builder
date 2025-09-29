@@ -1,0 +1,740 @@
+
+<style>
+
+    {{#if target_attribute}}
+        .productGrid-widget-outer-{{_.id}}.card-section-hidden {
+            display: none;
+        }
+        .productGrid-widget-outer-{{_.id}}.card-section-hidden.active {
+        display: block;
+         } 
+    {{/if}}
+    .slider-progress{
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background: #D9D9D9;
+        display: block;
+    }
+
+    .progress{
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background: #0153A0;
+        transition: width 0.3s ease-in-out;
+    }
+    .productGrid-widget .card-img-container::after {
+        content: none;
+    } 
+    .productGrid-widget-outer-{{_.id}} .productGrid {
+      row-gap: unset;
+      margin-bottom: 0px;
+      padding-bottom: 0;
+      display: block;
+      padding-right: 0;
+    }
+    .price-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .productGrid-widget-outer-{{_.id}} .slick-track {
+        display: flex !important;
+    }
+
+    .productGrid-widget-outer-{{_.id}} .slick-slide {
+        height: auto !important;
+        margin-right: 20px;
+    }
+
+    .alt-card-outer-{{_.id}} .card {
+        padding-bottom: 0 !important;
+    }
+
+    .productGrid-widget-outer-{{_.id}} .productCardSlider{
+        margin-left: 0 !important;
+        position: relative;
+        padding-bottom: 20px !important;
+    }
+
+    .widgettitle-section {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+    
+    .productGrid-widget-outer-{{_.id}} .widget-button-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .productGrid-widget-outer-{{_.id}} .arrow-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: #0153A0;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .cardWidget_heading-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-direction: column;
+    }
+    .progress-container {
+        width: 100%;
+        height: 4px;
+        background: #D9D9D9;
+        position: relative;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: #0153A0;
+        position: absolute;
+        width: 0;
+        transition: width 0.3s ease;
+    }
+    @media screen and (min-width: 961px) {
+        .slider-progress{
+            display: none;
+        }
+        .productGrid-widget-outer-{{_.id}} .widget-button-section{
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+        }
+        .widgettitle-section h2 {
+            margin-bottom: 0;
+        }
+        .productGrid-widget-outer-{{_.id}} .productCardSlider{
+            padding-bottom: 40px;
+        }
+    }
+    @media (max-width : 960px) {
+        .widgettitle-section h2 {
+            margin-bottom: 16px;
+        }
+    }
+    @media (max-width : 961px) {
+
+        .productGrid-widget-outer-{{_.id}} .slick-list{
+            padding:0 20% 0 0 !important;
+        }
+
+
+        .productGrid-widget-outer-{{_.id}} .productCardSlider{
+            margin-left: 0 !important;
+            padding: 0;
+        }
+
+        .cardWidget_heading-section {
+            padding-right: 22px;
+        }
+
+        .productGrid-widget-outer-{{_.id}} .container{
+            padding-right: 0 !important;
+        }
+
+    }   
+
+    @media (min-width: 961px) {
+
+        .productGrid-widget-outer-{{_.id}} .arrow-btn {
+            width: 40px;
+            height: 40px;
+        }
+
+        .cardWidget_heading-section {
+            align-items: center !important;
+            flex-direction: row !important;
+            margin-bottom: 35px;
+        }
+
+    }
+
+
+    .alt-card-outer-{{_.id}} .alt-card {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .alt-card-outer-{{_.id}} .card-bg {
+        height: 100%;
+    }
+
+    .alt-card-outer-{{_.id}} .card-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .alt-card-outer-{{_.id}} .card-bg.img::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000066;
+        pointer-events: none; 
+        z-index: 1;
+    }
+
+    .alt-card-outer-{{_.id}} .card-overlay {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: {{featured_card_bg}};
+    }
+
+    .alt-card-outer-{{_.id}} .card-top .card-overlay.clip-top {
+        clip-path: polygon(0 40%, 100% 70%, 100% 100%, 0 100%);
+    }
+
+    .alt-card-outer-{{_.id}} .card-top .card-overlay2.clip-top {
+        clip-path: polygon(0 35%, 100% 65%, 100% 100%, 0 100%);
+    }
+
+    .alt-card-outer-{{_.id}} .card-bottom .card-overlay.clip-top {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0 35%);
+    }
+
+    .alt-card-outer-{{_.id}} .card-bottom .card-overlay2.clip-top {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0 39%);
+    }
+
+    .alt-card-outer-{{_.id}} .card-overlay2 {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+    }
+
+    .alt-card-outer-{{_.id}} .card-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+        {{text_position}}: 0;
+        color: white;
+        text-align: center;
+        z-index: 2;
+    }
+
+
+    {{#if text_position '===' 'top'}}
+        .alt-card-outer-{{_.id}} .card-content {
+            padding-top: 62px;
+        }
+        {{else}}
+        .alt-card-outer-{{_.id}} .card-content {
+            padding-bottom: 40px;
+        }
+        {{/if}}
+
+    .alt-card-outer-{{_.id}} .card-content h3 {
+        margin: 0 0 10px;
+        color: {{featured_title_color}};
+        font-size: {{featured_title_font_size_mobile.value}}px;
+    }
+
+    .alt-card-outer-{{_.id}} .card-content p {
+        margin: 0 0 20px;
+        font-size: {{featured_price_font_size_mobile.value}}px;
+        color: {{featured_price_color}};
+        font-weight: 700;
+    }
+
+    .alt-card-outer-{{_.id}} .add-to-cart {
+        font-size: 12px;
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .alt-card-outer-{{_.id}} .add-to-cart:hover {
+        background-color: #f0f0f0;
+    }
+
+    
+    .add-to-cart-outer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-to-cart {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .add-to-cart-btn {
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .add-to-cart-btn.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+    .widget-card-loop .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        height: 100%;
+    }
+    
+    .widget-card-loop .card-img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .widget-card-loop .free-item-card img {
+        width: 100%;
+    }
+
+    .productGrid .product {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .productGrid .product .card {
+        padding: 20px !important;
+        background-color: white;
+    }
+
+
+    .cardWidget_heading-section h2 {
+      font-size: {{cardWidget_sectionTitle_font_size_mobile.value}}px;
+      font-weight: bold;
+    }
+
+    .cardWidget_heading-section .view-all-brands {
+      font-size: {{cardWidget_sectionButton_font_size_mobile.value}}px;
+      display: inline-block;
+      padding: 10px 20px;
+      text-align: center;
+      background-color: #FFF101;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+
+    @media screen and (min-width: 661px) {
+        .alt-card-outer-{{_.id}} .card-content h3 {
+            font-size: {{featured_title_font_size_desktop.value}}px;
+        }
+        .alt-card-outer-{{_.id}} .card-content p {
+            font-size: {{featured_price_font_size_desktop.value}}px;
+        }
+        .alt-card-outer-{{_.id}} .add-to-cart {
+            font-size: 14px;
+        }
+
+        {{#if text_position '===' 'top'}}
+
+        .alt-card-outer-{{_.id}} .card-content {
+            padding-top: 112px;
+        }
+
+        {{else}}
+
+        .alt-card-outer-{{_.id}} .card-content {
+            padding-bottom: 61px;        
+        }
+
+        {{/if}}
+    }
+
+    
+
+    @media (min-width: 661px) {
+      .cardWidget_heading-section .heading-section {
+        margin-bottom: 37px;
+      }
+    }
+
+    @media screen and (min-width: 661px) and (max-width:961px) {
+    .cardWidget_heading-section h2 {
+      font-size: {{cardWidget_sectionTitle_font_size_tablet.value}}px;
+    }
+
+    .cardWidget_heading-section .view-all-brands {
+      font-size: {{cardWidget_sectionButton_font_size_tablet.value}}px;
+    }
+    .alt-card-outer-{{_.id}} .card-content h3 {
+        font-size: {{featured_title_font_size_tablet.value}}px;
+    }
+    .alt-card-outer-{{_.id}} .card-content p {
+            font-size: {{featured_price_font_size_tablet.value}}px;
+    }
+  }
+
+    @media screen and (min-width: 961px) {
+        .cardWidget_heading-section h2 {
+        font-size: {{cardWidget_sectionTitle_font_size_desktop.value}}px;
+        }
+        .cardWidget_heading-section .view-all-brands {
+        font-size: {{cardWidget_sectionButton_font_size_desktop.value}}px;
+        }
+    }
+
+    .productGrid-widget-outer-{{_.id}} .arrow-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+
+
+    .productGrid-widget-outer-{{_.id}} .arrow-btn.right {
+        background-color: #0153A0   ;
+        color: white;
+    }
+
+    .productGrid-widget-outer-{{_.id}} .arrow-btn:hover {
+        background-color: #d3d3d3;
+    }
+    .productGrid-widget-outer-{{_.id}} .arrow-btn.right:hover {
+        background-color: #d3d3d3;
+        color: #333;
+    }
+
+    .widget-arrows-inner {
+        display: block;
+    }
+
+    .widgetbutton-section {
+        display: none;
+    }
+    .widgetbutton-section.visible {
+        display: block;
+    }
+
+    .add-to-cart-btn-outer {
+        margin-top: auto;
+    }
+
+</style>
+    
+<div class="productGrid-widget-outer-{{_.id}} {{#if target_attribute}}product-tab-section{{else}}product-slider-section{{/if}} card-section-hidden" id="tab-{{dashcase target_attribute}}">
+    <div class=" container">
+        {{#if cardWidget_sectionTitle}}
+            <div class="cardWidget_heading-section">
+                <div class="widgettitle-section">
+                    <div class="widget-title-inner">
+                        <h2>{{cardWidget_sectionTitle}}</h2>
+                    </div>
+                    <div class="widget-arrows-inner show-mob">
+                        <div class="arrow-buttons">
+                            <button class="arrow-btn left">
+                                <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.19244 1.70398L2 5.89642L6.10363 10.0001" stroke="white" stroke-width="2" stroke-linecap="square"/>
+                                    </svg>
+                                    </span>
+                            </button>
+                            <button class="arrow-btn right">
+                                <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.80756 10.2961L6 6.10363L1.89637 2" stroke="white" stroke-width="2" stroke-linecap="square"/>
+                                    </svg>
+                                    </span>
+                            </button>
+                        </div>    
+                    </div>
+                </div>
+                <div class="widget-button-section">
+                    <div class="widget-arrows-inner show-desk">
+                        <div class="arrow-buttons">
+                            <button class="arrow-btn left">
+                                <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.19244 1.70398L2 5.89642L6.10363 10.0001" stroke="white" stroke-width="2" stroke-linecap="square"/>
+                                    </svg>
+                                    </span>
+                            </button>
+                            <button class="arrow-btn right">
+                                <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.80756 10.2961L6 6.10363L1.89637 2" stroke="white" stroke-width="2" stroke-linecap="square"/>
+                                    </svg>
+                                    </span>
+                            </button>
+                        </div>    
+                    </div>
+                    <a href="{{cardWidget_buttonLink}}" class="view-all-brands">{{cardWidget_sectionButton}}</a>
+                </div>
+            </div>      
+        {{/if}}  
+        <div class="productGrid productGrid-widget productCardSlider">
+
+            {{#if enable_card_btn}}
+                <div class="alt-card-outer-{{_.id}} ">
+                    
+                    {{#if text_position '===' 'bottom'}}
+        
+                        <div class="alt-card card-top">
+                            <div class="card-bg">
+                                <img src="{{imageUrl.src}}" alt="Tool Image">
+                            </div>
+                            <div class="card-overlay clip-top"></div>
+                            <div class="card-overlay2 clip-top"></div>
+                            <div class="card-content">
+                                <h3>{{featured_title}}</h3>
+                                <p><strong>Now:</strong> {{featured_price}}</p>
+                                <a class="add-to-cart-outer" href="{{featured_button_link}}">
+                                    <button class="add-to-cart">
+                                        {{featured_button}}
+                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.43997 0.000857084C1.35695 0.00516272 1.2756 0.0257654 1.20055 0.0614884C1.12551 0.0972115 1.05824 0.147355 1.00259 0.209056C0.946941 0.270757 0.904003 0.342806 0.876225 0.421089C0.848448 0.499372 0.836377 0.582356 0.840701 0.665301C0.845024 0.748246 0.865658 0.829527 0.901424 0.904504C0.93719 0.97948 0.987388 1.04668 1.04915 1.10227C1.11091 1.15786 1.18303 1.20075 1.26138 1.22849C1.33974 1.25623 1.42279 1.26828 1.50581 1.26395H3.54688L6.16078 10.9016C6.19707 11.036 6.27677 11.1546 6.3875 11.2391C6.49823 11.3236 6.63379 11.3691 6.7731 11.3687H17.097C17.1808 11.3699 17.2639 11.3544 17.3416 11.3232C17.4194 11.292 17.4901 11.2456 17.5498 11.1869C17.6094 11.1281 17.6568 11.0581 17.6891 10.9809C17.7214 10.9037 17.7381 10.8208 17.7381 10.7371C17.7381 10.6534 17.7214 10.5706 17.6891 10.4934C17.6568 10.4161 17.6094 10.3461 17.5498 10.2874C17.4901 10.2286 17.4194 10.1823 17.3416 10.1511C17.2639 10.1199 17.1808 10.1044 17.097 10.1056H7.26032L7.02988 9.26352H17.5184C17.6568 9.26435 17.7917 9.21975 17.9024 9.13656C18.013 9.05336 18.0932 8.93618 18.1307 8.80302L19.8162 2.69808C19.8428 2.60388 19.847 2.5048 19.8286 2.40868C19.8103 2.31256 19.7698 2.22201 19.7104 2.14418C19.6511 2.06636 19.5744 2.00338 19.4865 1.96022C19.3986 1.91707 19.3019 1.89491 19.2039 1.89549H5.03489L4.64643 0.467937C4.61014 0.333547 4.53044 0.214899 4.41971 0.130433C4.30897 0.0459669 4.17342 0.000415076 4.03411 0.000857084H1.50581C1.48387 -0.000285695 1.4619 -0.000285695 1.43997 0.000857084ZM5.37727 3.15858H18.3677L17.0312 8.00043H6.68751L5.37727 3.15858ZM8.45863 12.2107C7.41886 12.2107 6.56241 13.0665 6.56241 14.1054C6.56241 15.1443 7.41886 16 8.45863 16C9.4984 16 10.3549 15.1443 10.3549 14.1054C10.3549 13.0665 9.4984 12.2107 8.45863 12.2107ZM15.6222 12.2107C14.5824 12.2107 13.7259 13.0665 13.7259 14.1054C13.7259 15.1443 14.5824 16 15.6222 16C16.6619 16 17.5184 15.1443 17.5184 14.1054C17.5184 13.0665 16.6619 12.2107 15.6222 12.2107ZM8.45863 13.4738C8.81521 13.4738 9.09071 13.7491 9.09071 14.1054C9.09071 14.4616 8.81521 14.7369 8.45863 14.7369C8.10206 14.7369 7.82656 14.4616 7.82656 14.1054C7.82656 13.7491 8.10206 13.4738 8.45863 13.4738ZM15.6222 13.4738C15.9787 13.4738 16.2542 13.7491 16.2542 14.1054C16.2542 14.4616 15.9787 14.7369 15.6222 14.7369C15.2656 14.7369 14.9901 14.4616 14.9901 14.1054C14.9901 13.7491 15.2656 13.4738 15.6222 13.4738Z" fill="black"/>
+                                            </svg>
+                                    </button>
+                                </a>    
+                            </div>
+                        </div>
+        
+                    {{else}}
+        
+                        <div class="alt-card card-bottom">
+                            
+                            <div class="card-overlay clip-top"></div>
+                            <div class="card-overlay2 clip-top"></div>
+                            <div class="card-bg">
+                                <img src="{{imageUrl.src}}" alt="Tool Image">
+                            </div>
+                            <div class="card-content">
+                                <h3>{{featured_title}}</h3>
+                                <p>{{featured_price}}</p>
+                                <a class="add-to-cart-outer" href="{{featured_button_link}}">
+                                    <button class="add-to-cart">
+                                        {{featured_button}}
+                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.43997 0.000857084C1.35695 0.00516272 1.2756 0.0257654 1.20055 0.0614884C1.12551 0.0972115 1.05824 0.147355 1.00259 0.209056C0.946941 0.270757 0.904003 0.342806 0.876225 0.421089C0.848448 0.499372 0.836377 0.582356 0.840701 0.665301C0.845024 0.748246 0.865658 0.829527 0.901424 0.904504C0.93719 0.97948 0.987388 1.04668 1.04915 1.10227C1.11091 1.15786 1.18303 1.20075 1.26138 1.22849C1.33974 1.25623 1.42279 1.26828 1.50581 1.26395H3.54688L6.16078 10.9016C6.19707 11.036 6.27677 11.1546 6.3875 11.2391C6.49823 11.3236 6.63379 11.3691 6.7731 11.3687H17.097C17.1808 11.3699 17.2639 11.3544 17.3416 11.3232C17.4194 11.292 17.4901 11.2456 17.5498 11.1869C17.6094 11.1281 17.6568 11.0581 17.6891 10.9809C17.7214 10.9037 17.7381 10.8208 17.7381 10.7371C17.7381 10.6534 17.7214 10.5706 17.6891 10.4934C17.6568 10.4161 17.6094 10.3461 17.5498 10.2874C17.4901 10.2286 17.4194 10.1823 17.3416 10.1511C17.2639 10.1199 17.1808 10.1044 17.097 10.1056H7.26032L7.02988 9.26352H17.5184C17.6568 9.26435 17.7917 9.21975 17.9024 9.13656C18.013 9.05336 18.0932 8.93618 18.1307 8.80302L19.8162 2.69808C19.8428 2.60388 19.847 2.5048 19.8286 2.40868C19.8103 2.31256 19.7698 2.22201 19.7104 2.14418C19.6511 2.06636 19.5744 2.00338 19.4865 1.96022C19.3986 1.91707 19.3019 1.89491 19.2039 1.89549H5.03489L4.64643 0.467937C4.61014 0.333547 4.53044 0.214899 4.41971 0.130433C4.30897 0.0459669 4.17342 0.000415076 4.03411 0.000857084H1.50581C1.48387 -0.000285695 1.4619 -0.000285695 1.43997 0.000857084ZM5.37727 3.15858H18.3677L17.0312 8.00043H6.68751L5.37727 3.15858ZM8.45863 12.2107C7.41886 12.2107 6.56241 13.0665 6.56241 14.1054C6.56241 15.1443 7.41886 16 8.45863 16C9.4984 16 10.3549 15.1443 10.3549 14.1054C10.3549 13.0665 9.4984 12.2107 8.45863 12.2107ZM15.6222 12.2107C14.5824 12.2107 13.7259 13.0665 13.7259 14.1054C13.7259 15.1443 14.5824 16 15.6222 16C16.6619 16 17.5184 15.1443 17.5184 14.1054C17.5184 13.0665 16.6619 12.2107 15.6222 12.2107ZM8.45863 13.4738C8.81521 13.4738 9.09071 13.7491 9.09071 14.1054C9.09071 14.4616 8.81521 14.7369 8.45863 14.7369C8.10206 14.7369 7.82656 14.4616 7.82656 14.1054C7.82656 13.7491 8.10206 13.4738 8.45863 13.4738ZM15.6222 13.4738C15.9787 13.4738 16.2542 13.7491 16.2542 14.1054C16.2542 14.4616 15.9787 14.7369 15.6222 14.7369C15.2656 14.7369 14.9901 14.4616 14.9901 14.1054C14.9901 13.7491 15.2656 13.4738 15.6222 13.4738Z" fill="black"/>
+                                            </svg>
+                                    </button>
+                                </a>    
+                            </div>
+                        </div>
+        
+                    {{/if}}
+                </div>
+            {{/if}}
+                {{json products}}
+            {{#each products as |product|}}
+                    {{#each ../_.data.site.products.edges as |productResource|}}
+                      {{#if productResource.node.entityId "==" product.productId}}
+                            <div class="product widget-card-loop">
+                                <article class="card" data-entity-id="{{productResource.node.entityId}}">
+                                    <div class="card-top-outer">
+                                        <div class="card-badge-container">
+                                                {{#filter productResource.node.customFields.edges "Free Shipping" property="node.name"}}
+                                                    {{#if node.value '==' 'Yes'}}
+                                                        <div class="promo-badge-shipping">
+                                                            <p>Free Shipping</p>
+                                                        </div>
+                                                    {{/if}}
+                                                {{/filter}}
+                                                {{#filter productResource.node.customFields.edges "Clearance" property="node.name"}}
+                                                    {{#if node.value '==' 'Yes'}}
+                                            <div class="promo-badge-clearance">
+                                                <p>Clearance</p>
+                                            </div>
+                                            {{/if}}
+                                            {{/filter}}
+                                        </div>
+                                        <figure class="card-figure">
+                                            <a href="{{productResource.node.path}}" class="card-figure__link" aria-label="{{productResource.node.name}}" data-event-type="product-click">
+                                                <div class="card-img-container">
+                                                    {{#if productResource.node.defaultImage.url}}
+                                                        <img class="card-image" src="{{productResource.node.defaultImage.url}}" alt="{{productResource.node.defaultImage.altText}}">
+                                                    {{else}}
+                                                        <img class="card-image" src="https://placehold.co/600x400" alt="{{productResource.node.defaultImage.altText}}">
+                                                    {{/if}}
+                                                </div>
+                                            </a>
+                                                <div class="free-item-card-{{productResource.node.entityId}}"></div>
+                                        </figure>
+
+                                    </div>
+                                    <div class="card-body-outer">
+                                        <div class="card-body">
+                                            <h3 class="card-title">
+                                                <a aria-label="{{productResource.node.name}}" href="{{productResource.node.path}}" data-event-type="product-click">{{productResource.node.name}}</a>
+                                            </h3>
+                                           
+                                        </div>
+                                      
+                                    </div>
+                                    <p  class="brand-name"  style="display: none;">{{productResource.node.brand.name}}</p>
+                                    {{assignVar "disableCartBtn" 0}}
+                                    {{assignVar "hidePrice" 0}}
+                                    {{#each productResource.node.customFields.edges}}
+                                        {{#if node.name '==' 'Disabled Reason'}}
+                                            {{#contains node.value '**Not Available - No ETA**'}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            {{#contains node.value '**Contact Store**'}}
+                                                {{assignVar "disableCartBtn" 1}} 
+                                            {{/contains}}
+                                            {{#contains node.value '**Out of Stock - Contact**'}}
+                                                {{assignVar "disableCartBtn" 1}} 
+                                            {{/contains}}
+                                            {{#contains node.value '**Limited Stock - Contact**'}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            {{#contains node.value '**Out of Stock - No ETA**'}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            {{#contains node.value '**Pro Install**'}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            
+                                            {{#contains node.value '**Contact for Quote & More Info**'}}
+                                                {{assignVar "hidePrice" 1}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            {{#contains node.value '**Request a Quote**'}}
+                                                {{assignVar "hidePrice" 1}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+                                            {{#contains node.value '**Call BL**'}}
+                                                {{assignVar "hidePrice" 1}}
+                                                {{assignVar "disableCartBtn" 1}}
+                                            {{/contains}}
+
+                                        {{/if}}  
+                                    {{/each}}
+                                    <div style="margin-top: auto;">
+                                    {{#unless (getVar "hidePrice") '==' 1}}
+                                    <div class="price-wrapper">
+                                    <div class="card-text" data-test-info-type="price">
+                                        {{#if productResource.node.prices.salePrice}}
+                                        <div class="price-section price-section--withTax price--withTax">
+                                            <span data-product-price-with-tax class="price">{{#if productResource.node.prices.salePrice.currencyCode '==' 'AUD'}}${{/if}}{{toFixed productResource.node.prices.salePrice.value 2}}</span>
+                                        </div>
+                                        <div class="price-section price-section--withtax non-sale-price--withTax">
+                                            <span data-product-non-sale-price-with-tax class="price price--non-sale">{{#if productResource.node.prices.basePrice.currencyCode '==' 'AUD'}}${{/if}}{{toFixed productResource.node.prices.basePrice.value 2}}</span>
+                                        </div>
+                                        {{else}}
+                                            <div class="price-section price-section--withTax price--withTax">
+                                                <span data-product-price-with-tax class="price">{{#if productResource.node.prices.price.currencyCode '==' 'AUD'}}${{/if}}{{toFixed productResource.node.prices.price.value 2}}</span>
+                                            </div>
+                                        {{/if}}
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="low-price" style="display: none;">
+                                            <img src="/content/everyday-low-price.png" alt="Everyday Low Price">
+                                          </p>
+                                    </div>
+                                </div>
+                                    {{/unless}}
+                                    {{#unless (getVar "disableCartBtn") '==' 1}}
+                                    {{#if productResource.node.productOptions.edges}}
+                                    {{#if productResource.node.inventory.isInStock}}
+                                        <a class="add-to-cart-btn-outer" href="{{productResource.node.path}}">
+                                            <div class="add-to-cart-btn">
+                                            View Options<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.43997 0.000857084C1.35695 0.00516272 1.2756 0.0257654 1.20055 0.0614884C1.12551 0.0972115 1.05824 0.147355 1.00259 0.209056C0.946941 0.270757 0.904003 0.342806 0.876225 0.421089C0.848448 0.499372 0.836377 0.582356 0.840701 0.665301C0.845024 0.748246 0.865658 0.829527 0.901424 0.904504C0.93719 0.97948 0.987388 1.04668 1.04915 1.10227C1.11091 1.15786 1.18303 1.20075 1.26138 1.22849C1.33974 1.25623 1.42279 1.26828 1.50581 1.26395H3.54688L6.16078 10.9016C6.19707 11.036 6.27677 11.1546 6.3875 11.2391C6.49823 11.3236 6.63379 11.3691 6.7731 11.3687H17.097C17.1808 11.3699 17.2639 11.3544 17.3416 11.3232C17.4194 11.292 17.4901 11.2456 17.5498 11.1869C17.6094 11.1281 17.6568 11.0581 17.6891 10.9809C17.7214 10.9037 17.7381 10.8208 17.7381 10.7371C17.7381 10.6534 17.7214 10.5706 17.6891 10.4934C17.6568 10.4161 17.6094 10.3461 17.5498 10.2874C17.4901 10.2286 17.4194 10.1823 17.3416 10.1511C17.2639 10.1199 17.1808 10.1044 17.097 10.1056H7.26032L7.02988 9.26352H17.5184C17.6568 9.26435 17.7917 9.21975 17.9024 9.13656C18.013 9.05336 18.0932 8.93618 18.1307 8.80302L19.8162 2.69808C19.8428 2.60388 19.847 2.5048 19.8286 2.40868C19.8103 2.31256 19.7698 2.22201 19.7104 2.14418C19.6511 2.06636 19.5744 2.00338 19.4865 1.96022C19.3986 1.91707 19.3019 1.89491 19.2039 1.89549H5.03489L4.64643 0.467937C4.61014 0.333547 4.53044 0.214899 4.41971 0.130433C4.30897 0.0459669 4.17342 0.000415076 4.03411 0.000857084H1.50581C1.48387 -0.000285695 1.4619 -0.000285695 1.43997 0.000857084ZM5.37727 3.15858H18.3677L17.0312 8.00043H6.68751L5.37727 3.15858ZM8.45863 12.2107C7.41886 12.2107 6.56241 13.0665 6.56241 14.1054C6.56241 15.1443 7.41886 16 8.45863 16C9.4984 16 10.3549 15.1443 10.3549 14.1054C10.3549 13.0665 9.4984 12.2107 8.45863 12.2107ZM15.6222 12.2107C14.5824 12.2107 13.7259 13.0665 13.7259 14.1054C13.7259 15.1443 14.5824 16 15.6222 16C16.6619 16 17.5184 15.1443 17.5184 14.1054C17.5184 13.0665 16.6619 12.2107 15.6222 12.2107ZM8.45863 13.4738C8.81521 13.4738 9.09071 13.7491 9.09071 14.1054C9.09071 14.4616 8.81521 14.7369 8.45863 14.7369C8.10206 14.7369 7.82656 14.4616 7.82656 14.1054C7.82656 13.7491 8.10206 13.4738 8.45863 13.4738ZM15.6222 13.4738C15.9787 13.4738 16.2542 13.7491 16.2542 14.1054C16.2542 14.4616 15.9787 14.7369 15.6222 14.7369C15.2656 14.7369 14.9901 14.4616 14.9901 14.1054C14.9901 13.7491 15.2656 13.4738 15.6222 13.4738Z" fill="white"/>
+                                                </svg>
+                                        </div>
+                                        </a>
+                                        {{/if}}
+                                    {{else}}
+                                    {{#if productResource.node.inventory.isInStock}}
+                                            <a data-product-id="{{productResource.node.entityId}}" class="cart-btn" href="/cart.php?action=add&product_id={{productResource.node.entityId}}">
+                                            <div class="add-to-cart-btn">
+                                            Add to Cart<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.43997 0.000857084C1.35695 0.00516272 1.2756 0.0257654 1.20055 0.0614884C1.12551 0.0972115 1.05824 0.147355 1.00259 0.209056C0.946941 0.270757 0.904003 0.342806 0.876225 0.421089C0.848448 0.499372 0.836377 0.582356 0.840701 0.665301C0.845024 0.748246 0.865658 0.829527 0.901424 0.904504C0.93719 0.97948 0.987388 1.04668 1.04915 1.10227C1.11091 1.15786 1.18303 1.20075 1.26138 1.22849C1.33974 1.25623 1.42279 1.26828 1.50581 1.26395H3.54688L6.16078 10.9016C6.19707 11.036 6.27677 11.1546 6.3875 11.2391C6.49823 11.3236 6.63379 11.3691 6.7731 11.3687H17.097C17.1808 11.3699 17.2639 11.3544 17.3416 11.3232C17.4194 11.292 17.4901 11.2456 17.5498 11.1869C17.6094 11.1281 17.6568 11.0581 17.6891 10.9809C17.7214 10.9037 17.7381 10.8208 17.7381 10.7371C17.7381 10.6534 17.7214 10.5706 17.6891 10.4934C17.6568 10.4161 17.6094 10.3461 17.5498 10.2874C17.4901 10.2286 17.4194 10.1823 17.3416 10.1511C17.2639 10.1199 17.1808 10.1044 17.097 10.1056H7.26032L7.02988 9.26352H17.5184C17.6568 9.26435 17.7917 9.21975 17.9024 9.13656C18.013 9.05336 18.0932 8.93618 18.1307 8.80302L19.8162 2.69808C19.8428 2.60388 19.847 2.5048 19.8286 2.40868C19.8103 2.31256 19.7698 2.22201 19.7104 2.14418C19.6511 2.06636 19.5744 2.00338 19.4865 1.96022C19.3986 1.91707 19.3019 1.89491 19.2039 1.89549H5.03489L4.64643 0.467937C4.61014 0.333547 4.53044 0.214899 4.41971 0.130433C4.30897 0.0459669 4.17342 0.000415076 4.03411 0.000857084H1.50581C1.48387 -0.000285695 1.4619 -0.000285695 1.43997 0.000857084ZM5.37727 3.15858H18.3677L17.0312 8.00043H6.68751L5.37727 3.15858ZM8.45863 12.2107C7.41886 12.2107 6.56241 13.0665 6.56241 14.1054C6.56241 15.1443 7.41886 16 8.45863 16C9.4984 16 10.3549 15.1443 10.3549 14.1054C10.3549 13.0665 9.4984 12.2107 8.45863 12.2107ZM15.6222 12.2107C14.5824 12.2107 13.7259 13.0665 13.7259 14.1054C13.7259 15.1443 14.5824 16 15.6222 16C16.6619 16 17.5184 15.1443 17.5184 14.1054C17.5184 13.0665 16.6619 12.2107 15.6222 12.2107ZM8.45863 13.4738C8.81521 13.4738 9.09071 13.7491 9.09071 14.1054C9.09071 14.4616 8.81521 14.7369 8.45863 14.7369C8.10206 14.7369 7.82656 14.4616 7.82656 14.1054C7.82656 13.7491 8.10206 13.4738 8.45863 13.4738ZM15.6222 13.4738C15.9787 13.4738 16.2542 13.7491 16.2542 14.1054C16.2542 14.4616 15.9787 14.7369 15.6222 14.7369C15.2656 14.7369 14.9901 14.4616 14.9901 14.1054C14.9901 13.7491 15.2656 13.4738 15.6222 13.4738Z" fill="white"/>
+                                                </svg>
+                                        </div>
+                                        </a>
+                                        {{/if}}
+                                    {{/if}}
+                                    {{/unless}}
+                                    {{#filter productResource.node.customFields.edges "Disabled Reason" property="node.name"}}
+                                        {{#contains node.value '**Not Available - No ETA**'}}
+                                            <p class="availability-text">Not Currently Available - No ETA</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Contact Store**'}}
+                                            <p class="availability-text">Please Contact Your <a href="/tool-shops">Nearest Store</a> to Check Availability</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Out of Stock - Contact**'}}
+                                            <p class="availability-text">Out of Stock - Please <a href="/contact-us">Contact Us</a> for More Info</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Limited Stock - Contact**'}}
+                                            <p class="availability-text">Limited Stock Available - Please <a href="/contact-us">Contact Us</a> for More Info</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Out of Stock - No ETA**'}}
+                                            <p class="availability-text">Out of Stock - No ETA</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Pro Install**'}}
+                                            <p class="availability-text">Pro Install/Assessment Required</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Request a Quote**'}}
+                                              <p class="availability-text">Please <a href="/contact-us">Contact Us</a> to Request a Quote</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Call BL**'}}
+                                            <p class="availability-text">Please Call <a href="tel:08 6278 0022">08 6278 0022</a> to order</p>
+                                        {{/contains}}
+                                        {{#contains node.value '**Contact for Quote & More Info**'}}
+                                            <p class="availability-text">Please <a href="/contact-us">Contact Us</a> for Quote & More Info</p>
+                                        {{/contains}}
+                                    {{/filter}}
+                                    </div>
+                                </article>
+                            </div>
+                      {{/if}}
+                    {{/each}}
+            {{/each}}
+        </div>
+        <div class="slider-progress">
+            <div class="progress"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateHeroProductsLayoutWidth() {
+  document.querySelectorAll('.productGrid-widget-outer-{{_.id}}').forEach(function(element) {
+    var closestproductsSubLayoutContainer = element.closest('[data-sub-layout-container]');
+    if (closestproductsSubLayoutContainer) {
+      closestproductsSubLayoutContainer.classList.add('full-width-container');
+      closestproductsSubLayoutContainer.style.width = `${document.documentElement.clientWidth}px`;
+    }
+  });
+}
+// Set initial width
+updateHeroProductsLayoutWidth();
+// Update width on window resize
+window.addEventListener('resize', updateHeroProductsLayoutWidth);
+
+</script>

@@ -13,6 +13,18 @@
             "default": true
           },
           {
+            "type": "boolean",
+            "label": "Enable Paragraph",
+            "id": "enablePara",
+            "default": true
+          },
+          {
+            "type": "input",
+            "label": "Image background Overlay",
+            "id": "BgOverlay",
+            "default": "transparent"
+          },
+          {
             "type": "number",
             "label": "Height(Mobile)",
             "id": "carouselHeightMob",
@@ -50,6 +62,12 @@
             "label": "Heading",
             "id": "fwHeading",
             "default": "Polyverse "
+          },
+          {
+            "type": "text",
+            "label": "Paragraph",
+            "id": "fwparagraph",
+            "default": "BuyPlastic offers great pricing and personalized service. Shop our extensive range of plastics - sheets, rods, tubes, and much more. Order by 3pm EST for same business day shipping! "
           },
           {
             "type": "select",
@@ -100,6 +118,12 @@
             "label": "Enter Video Url",
             "id": "videoUrl",
             "default": ""
+          }, 
+          {
+            "type": "boolean",
+            "label": "Enable Bottom Text",
+            "id": "BottomTextHide",
+            "default": true
           }, 
           {
             "type": "text",

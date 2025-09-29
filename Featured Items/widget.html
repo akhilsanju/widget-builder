@@ -1,0 +1,85 @@
+
+  
+
+    <section class="widget-featured-items">
+        <h2>{{featured_title}}</h2>
+        <ul class="productGridSlider materials-slider-container">
+        {{#each products as |product|}}
+            {{#each ../_.data.site.products.edges as |productResource|}}
+                {{#if productResource.node.entityId "==" product.productId}}
+                    <li class="widegt-product">
+                        <article class="card material-card">
+                            <div class="card-badge-container" style="display: none;">
+
+                                <div class="svg-icon wishlist-icon product-card-wishlist" data-product-id="{{productResource.node.entityId}}">
+                                    <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20.2913 2.60987C19.7805 2.09888 19.1741 1.69352 18.5066 1.41696C17.8392 1.14039 17.1238 0.998047 16.4013 0.998047C15.6788 0.998047 14.9634 1.14039 14.2959 1.41696C13.6285 1.69352 13.022 2.09888 12.5113 2.60987L11.4513 3.66987L10.3913 2.60987C9.3596 1.57818 7.96032 0.998582 6.50129 0.998582C5.04226 0.998582 3.64298 1.57818 2.61129 2.60987C1.5796 3.64156 1 5.04084 1 6.49987C1 7.95891 1.5796 9.35818 2.61129 10.3899L3.67129 11.4499L11.4513 19.2299L19.2313 11.4499L20.2913 10.3899C20.8023 9.87912 21.2076 9.27269 21.4842 8.60523C21.7608 7.93777 21.9031 7.22236 21.9031 6.49987C21.9031 5.77738 21.7608 5.06198 21.4842 4.39452C21.2076 3.72706 20.8023 3.12063 20.2913 2.60987Z"
+                                            stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figure class="card-figure card-image-container">
+                                <a href="{{productResource.node.path}}" class="card-figure__link" aria-label="" data-event-type="product-click">
+                                    <div class="card-img-container">
+                                        <img src="{{productResource.node.defaultImage.url}}" class="card-image lazyautosizes lazyloaded"
+                                         alt="{{productResource.node.defaultImage.altText}}" data-sizes="auto" />
+                                    </div>
+                                </a>
+                                        <a class="explore-btn add-to-cart desk-btn" href="{{productResource.node.addToCartUrl}}">Add to Cart</a>
+                            </figure>
+                            <div class="card-body">
+                                <p class="card-category-text" data-test-info-type="categoryName" style="display: none;">
+                                    {{#each productResource.node.categories.edges as |categoryEdge|}}
+                                        {{#if categoryEdge.node.name}}
+                                            {{categoryEdge.node.name}}
+                                            {{#unless @last}} | {{/unless}}
+                                        {{/if}}
+                                    {{/each}}
+                                </p>
+                                <h3 class="card-title">
+                                    <a aria-label="{{productResource.node.name}}" href="{{productResource.node.path}}" data-event-type="product-click" class="material-name">
+                                        {{productResource.node.name}}
+                                    </a>
+                                </h3>
+                                <div class="card-text" data-test-info-type="price">
+    
+                                    <div class="mnd-price-container">
+                                        <div class="price-container">
+                                            {{#if productResource.node.prices.salePrice}}
+                                                <div class="price-section price-section--withoutTax price--withoutTax">
+    
+                                                    <span data-product-price-without-tax="" class="price">{{#if productResource.node.prices.salePrice.currencyCode '==' 'USD'}}${{/if}}{{toFixed productResource.node.prices.salePrice.value 2}}</span>
+                                                </div>
+                                                <div class="price-section price-section--withoutTax non-sale-price--withoutTax">
+    
+                                                    <span data-product-non-sale-price-without-tax="" class="price price--non-sale">
+                                                        {{#if productResource.node.prices.basePrice.currencyCode '==' 'USD'}}${{/if}}{{toFixed productResource.node.prices.basePrice.value 2}}
+                                                    </span>
+                                                </div>
+                                            {{else}}
+                                                <div class="price-section price-section--withoutTax price--withoutTax">
+                                                    <span data-product-price-without-tax="" class="price">{{#if productResource.node.prices.price.currencyCode '==' 'USD'}}${{/if}}{{toFixed productResource.node.prices.price.value 2}}</span>
+                                                </div>
+                                            {{/if}}
+                                        </div>
+                                        <div class="mnd-plp-add-to-cart-button-container">
+                                            <!-- {{#if productResource.node.productOptions.edges.length}}
+                                                <a href="{{productResource.node.path}}">Choose Options</a>
+                                            {{else}}
+                                                <a href="{{productResource.node.addToCartUrl}}">Add to Cart</a>
+                                            {{/if}} -->
+                                              <a class="explore-btn add-to-cart mobile-btn" href="{{productResource.node.addToCartUrl}}">Add to Cart</a>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                {{/if}}
+            {{/each}}
+        {{/each}}
+    </ul>
+   </section> 
+
