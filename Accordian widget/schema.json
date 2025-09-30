@@ -22,7 +22,7 @@
               {
                 "type": "input",
                 "label": "Accordian Answers",
-                "id": "accordian-text-title",
+                "id": "accordian-text-title-answers",
                 "default": "Lorem Ipsum"
               }
             ]
@@ -38,70 +38,18 @@
       {
         "label": "Text Settings",
         "settings": [
-          {
-            "type": "boxModel",
-            "label": "Container Margin(Desktop)",
-            "id": "contentmargin",
-            "default": {
-              "top": {
-                "value": "0",
-                "type": "px"
-              },
-              "right": {
-                "value": "0",
-                "type": "px"
-              },
-              "bottom": {
-                "value": "0",
-                "type": "px"
-              },
-              "left": {
-                "value": "0",
-                "type": "px"
-              }
-            }
-          },
-          {
-            "type": "boxModel",
-            "label": "Content Margin(Mobile)",
-            "id": "contentMobilemargin",
-            "default": {
-              "top": {
-                "value": "34",
-                "type": "px"
-              },
-              "right": {
-                "value": "26",
-                "type": "px"
-              },
-              "bottom": {
-                "value": "34",
-                "type": "px"
-              },
-              "left": {
-                "value": "26",
-                "type": "px"
-              }
-            }
-          },
-         {
-                "type": "number",
-                "label": "Marquee Title Font Size",
-                "id": "marquee-text-title-font-size",
-                "default": {
-                "value": 30,
-                "type": "px"
-             }
-              },
               {
-                "type": "number",
-                "label": "Marquee Title Font Size",
-                "id": "marquee-text-title-font-size-mobile",
-                "default": {
-                "value": 20,
-                "type": "px"
-              }
-              }
+                "type": "text",
+                "label": "Accordian Main Heading ",
+                "id": "accordian-text-title-font",
+                "default": "Frequently Asked Questions"
+            },
+              {
+                "type": "text",
+                "label": "Accordian Sub Heading",
+                "id": "accordian-sub-title-font",
+                "default": "Get the solutions you need from the experts at Curbell Plastics. With decades of experience in nearly every industry, we can help you with:"
+            }
         ]
       }
     ]

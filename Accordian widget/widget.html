@@ -1,20 +1,12 @@
 <style>
 .faq-section {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  font-family: "Segoe UI", sans-serif;
+  margin: 0px auto;
 }
 
-.faq-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+
 
 .faq-item {
   border-bottom: 1px solid #ddd;
-  padding: 10px 0;
 }
 
 .faq-question {
@@ -22,14 +14,10 @@
   background: none;
   border: none;
   outline: none;
-  text-align: left;
-  font-size: 1.1rem;
-  font-weight: 600;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
 }
 
 .faq-question .icon {
@@ -46,11 +34,10 @@
 }
 
 .faq-answer p {
-  margin: 10px 0;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px; /* enough for content */
+  max-height: 200px;
   padding: 10px 0;
 }
 
@@ -62,7 +49,8 @@
 </style>
 
 <section class="faq-section">
-  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <h2 class="faq-title">{{accordian-text-title-font}}</h2>
+  <p>{{accordian-sub-title-font}}</p>
   <div class="faq-container">
     {{#each arraytab}}
     <div class="faq-item">
@@ -70,7 +58,7 @@
         {{accordian-text-title}}<span class="icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>CodePen is an online community for testing and showcasing HTML, CSS, and JavaScript code snippets.</p>
+        <p>{{accordian-text-title-answers}}</p>
       </div>
     </div>
     {{/each}}
