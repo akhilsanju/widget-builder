@@ -15,7 +15,8 @@ div[data-layout-name="Layout-marquee"] {
   left: 50%;
   transform: translateX(-50%);
   position: relative;
-  margin: {{contentMobilemargin.top.value}}px {{contentMobilemargin.right.value}}px {{contentMobilemargin.bottom.value}}px {{contentMobilemargin.left.value}}px
+  margin: {{contentMobilemargin.top.value}}px {{contentMobilemargin.right.value}}px {{contentMobilemargin.bottom.value}}px {{contentMobilemargin.left.value}}px;
+  z-index: -1;
 }
 
 .marquee-text-{{_.id}} .marquee-track {
@@ -27,6 +28,7 @@ div[data-layout-name="Layout-marquee"] {
 
 .marquee-text-{{_.id}} p {
   text-transform: uppercase;
+  line-height: 100%;
   will-change: transform;
   font-size: {{marquee-text-title-font-size-mobile.value}}px;
   color: #fff;

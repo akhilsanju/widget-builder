@@ -8,6 +8,12 @@
         "settings": [
           {
             "type": "boolean",
+            "label": "Enable Animation for non rotated image column",
+            "id": "non-rotated-image",
+            "default": true
+          },
+          {
+            "type": "boolean",
             "label": "Reverse Columns",
             "id": "featuredDeal-reverse-columns",
             "default": false
@@ -17,6 +23,96 @@
             "label": "Reverse Columns On Small Screens",
             "id": "featuredDeal-reverse-columns-mobile",
             "default": false
+          },
+          {
+            "type": "boolean",
+            "label": "Enable Single Image On Reverse Column",
+            "id": "featuredDeal-reverse-columns-single-image",
+            "default": false
+          },
+          {
+            "type": "boolean",
+            "label": "Enable Absolute position",
+            "id": "featuredDealnoposition",
+            "default": true
+          },
+          {
+            "type": "boolean",
+            "label": "Enable Left Bottom Corner Animation",
+            "id": "leftBottomAnimation",
+            "default": false
+          },
+          {
+            "type": "number",
+            "label": "Image top value",
+            "id": "imageYvalue",
+            "default": {
+              "value": 80,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image top value on Mobile",
+            "id": "imagetopMb",
+            "default": {
+              "value": 30,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image rotate value",
+            "id": "imagedegvalue",
+            "default": {
+              "value": 6,
+              "type": "deg"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image rotate value on Mobile",
+            "id": "imagedegvalueMb",
+            "default": {
+              "value": 3,
+              "type": "deg"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Column gap value",
+            "id": "Columngap",
+            "default": {
+              "value": 63,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image right margin value",
+            "id": "imagerightvalue",
+            "default": {
+              "value": 56,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Content column width",
+            "id": "imagecolumntvalue",
+            "default": {
+              "value": 50,
+              "type": "%"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image column width",
+            "id": "contentcolumnvalue",
+            "default": {
+              "value": 50,
+              "type": "%"
+            }
           },
           {
             "type": "alignment",
@@ -116,11 +212,70 @@
           },        
           {
             "type": "number",
+            "label": "Image Height(Desktop)",
+            "id": "fdImageHeightDesk",
+            "default": {
+              "value": 480,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
             "label": "Image Height(Tablet)",
             "id": "fdImageHeightTab",
             "default": {
-              "value": 400,
+              "value": 340,
               "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image Height(Mobile)",
+            "id": "fdImageHeightMob",
+            "default": {
+              "value": 325,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image Width(Desktop)",
+            "id": "fdImageWidthDesk",
+            "default": {
+              "value": 420,
+              "type": "px"
+            }
+          },
+          {
+            "type": "number",
+            "label": "Image Width(Mobile)",
+            "id": "fdImageWidthMobile",
+            "default": {
+              "value": 260,
+              "type": "px"
+            }
+          },
+            {
+            "type": "boxModel",
+            "label": "Image Border Radius",
+            "id": "ImageBorderRadius",
+            "default": {
+              "top": {
+                "value": "20",
+                "type": "px"
+              },
+              "right": {
+                "value": "20",
+                "type": "px"
+              },
+              "bottom": {
+                "value": "0",
+                "type": "px"
+              },
+              "left": {
+                "value": "0",
+                "type": "px"
+              }
             }
           }
         ]
@@ -168,6 +323,15 @@
             "label": "Title",
             "id": "fdTitle",
             "default": "Ask the Experts"
+          },
+          {
+            "type": "number",
+            "label": "Content Width",
+            "id": "contentWidth",
+            "default": {
+              "value": 574,
+              "type": "px"
+            }
           },
           {
             "type": "code",
@@ -300,7 +464,7 @@
             "label": "Content Size(Desktop)",
             "id": "fdContentSizeDesk",
             "default": {
-              "value": 16,
+              "value": 20,
               "type": "px"
             }
           },
@@ -309,7 +473,7 @@
             "label": "Content Size(Mobile)",
             "id": "fdContentSizeMob",
             "default": {
-              "value": 12,
+              "value": 16,
               "type": "px"
             }
           }

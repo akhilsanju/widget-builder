@@ -1,0 +1,14 @@
+
+<section class="features-section-conatiner cardSliderWidgetContainer">
+<div class="feature-carousel cardSliderWidget">
+  {{#each cardSlider}}
+  <div class="feature-card">
+    <div class="feature-icon">
+    <img src="{{cardimageUrl.src}}" alt="{{card-text-title}}"/>
+    </div>
+    <h3>{{card-text-title}}</h3>
+    <p>{{card-sub-text-title}}</p>
+  </div>
+  {{/each}}
+</div>
+</section>

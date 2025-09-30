@@ -2,8 +2,8 @@
   {
     "type": "array",
     "label": "Text",
-    "id": "marqueeText",
-    "defaultCount": 1,
+    "id": "arraytab",
+    "defaultCount": 4,
     "entryLabel": "Tab Header",
     "schema": [
       {
@@ -15,8 +15,14 @@
             "settings": [
               {
                 "type": "input",
-                "label": "Marquee Title",
-                "id": "marquee-text-title",
+                "label": "Accordian Question",
+                "id": "accordian-text-title",
+                "default": "Lorem Ipsum"
+              },
+              {
+                "type": "input",
+                "label": "Accordian Answers",
+                "id": "accordian-text-title",
                 "default": "Lorem Ipsum"
               }
             ]

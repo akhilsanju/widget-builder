@@ -1,0 +1,43 @@
+[
+  {
+    "type": "array",
+    "label": "Text",
+    "id": "cardSlider",
+    "defaultCount":3,
+    "entryLabel": "Tab Header",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "input",
+                "label": "Title",
+                "id": "card-text-title",
+                "default": "MULTIPLE SIZE PLASTICS"
+              },
+              {
+                "type": "input",
+                "label": "Sub Title",
+                "id": "card-sub-text-title",
+                "default": "Get the perfect fit every time with a wide range of sizes in stock, helping you reduce both cost and waste."
+              },
+            {
+            "type": "imageManager",
+            "id": "cardimageUrl",
+            "label": "card icon Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/tabler-ruler-measure.png?t=1758439410",
+              "type": "IMAGE_MANAGER"
+            }
+          }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

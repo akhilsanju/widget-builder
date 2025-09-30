@@ -1,0 +1,173 @@
+
+<style>
+
+
+.card-video-{{_.id}} {
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+}    
+
+.widget-card-common {
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  width:calc(100%/1);
+  position: relative;
+}
+
+.card-video-image-container{
+    padding: 20px;
+}
+
+.video-card-image{
+    min-height: 320px;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-video-embed {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-video-embed iframe,
+.card-video-embed video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-video-embed {
+  aspect-ratio: 16/9; 
+}
+
+@media (min-width: 768px) {
+.widget-card-common {
+  width:calc(100%/4);
+  max-width: 323px;
+}
+.card-video-{{_.id}} {
+    gap:16px;
+}    
+
+.widget-card-common:hover .card-video-btn{
+  display: block;
+}
+
+}
+
+.card-video-btn{
+position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: 
+    linear-gradient(0deg, #FFFFFF, #FFFFFF),
+    linear-gradient(0deg, rgba(0, 71, 15, 0.2), rgba(0, 71, 15, 0.2));
+    border-radius: 15px;
+    padding: 10px 0;
+    max-width: 75%;
+    width: 75%;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    display: none;
+    border: 1px solid #00470F;
+}
+
+    .card-video-btn a{
+    color: #00470F;
+    text-decoration: none;
+    }
+
+
+
+</style>
+
+
+<div id="card-video-widget" class="card-video-{{_.id}}">
+    {{#each videoCards}}
+    {{#if videoenabled}}
+    <div class="video-card widget-card-common" videolink="{{CardVideoUrl}}" id="video-card-id">
+      <div class="card-video-embed"></div> 
+      <div class= "card-video-btn">  
+    <a href="{{videocardbtnlink}}">{{videocardbtn}}</a>       
+     </div>  
+     <div class="video-title">
+        <h4>{{CardTitle}}</h4>
+        <p>{{Carddescription}}</p>
+     </div>
+    </div>
+ 
+    {{else}}
+
+    <div class= "card-video-image-container widget-card-common">
+         <div class="video-card-image" style= "max-width: 100%; background-image: url('{{VideoImage.src}}');" aria-label= "{{altTextDesk}}">
+         </div>
+            <div class= "card-video-btn">
+                <a href="{{videocardbtnlink}}">{{videocardbtn}}</a>
+            </div>
+     <div class="video-title">
+        <h4>{{CardTitle}}</h4>
+        <p>{{Carddescription}}</p>
+     </div>
+    </div>
+
+    {{/if}}
+    {{/each}}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".video-card");
+
+  cards.forEach((card) => {
+    const url = card.getAttribute("videolink");
+    const embedTarget = card.querySelector(".card-video-embed");
+    if (!url || !embedTarget) return;
+
+    let embedCode = "";
+
+    if (url.includes("vimeo.com")) {
+      // Extract Vimeo video ID - handles different Vimeo URL formats
+      let videoId = "";
+      
+      if (url.includes("/video/")) {
+        videoId = url.split("/video/")[1].split("?")[0];
+      } else {
+        videoId = url.split("vimeo.com/")[1].split("?")[0];
+      }
+      videoId = videoId.split("/")[0];
+
+      embedCode = `<iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&loop=1&background=1&controls=0&byline=0&title=0&portrait=0&transparent=0" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>`;
+
+    } else if (url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg")) {
+      embedCode = `<video autoplay muted loop playsinline preload="auto"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+        <source src="${url}" type="video/mp4">
+      </video>`;
+    } else {
+      embedCode = "<p>Unsupported video format.</p>";
+    }
+
+    embedTarget.innerHTML = embedCode;
+  });
+
+  // Force autoplay for any video elements (fallback)
+  setTimeout(() => {
+    const videos = document.querySelectorAll("video");
+    videos.forEach(video => {
+      video.play().catch(e => {
+        console.log("Video autoplay prevented by browser:", e);
+      });
+    });
+  }, 500);
+});
+</script>

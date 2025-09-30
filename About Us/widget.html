@@ -3,6 +3,7 @@
   
       .deal-container-{{_.id}} {
         display: flex;
+        gap: 0 {{Columngap.value}}px;
         {{#if featuredDeal-reverse-columns}}
           flex-direction: row-reverse;
         {{/if}}
@@ -37,10 +38,10 @@
       }
       
       .deal-container-{{_.id}} .left-column .left-inner-colum{
-            max-width: 260px;
-            transform: rotate(3deg);
+            max-width: {{fdImageWidthMobile.value}}px;
+            transform: rotate({{imagedegvalueMb.vlaue}}deg);
             position: relative;
-            top: 30px;
+            top: {{imagetopMb.value}}px;
             height: 100%;
        }
 
@@ -49,15 +50,18 @@
         height: 100%;
        }
 
-      .deal-container-{{_.id}} .left-column,
+      .deal-container-{{_.id}} .left-column{
+        flex: 0 0 {{contentcolumnvalue.value}}%;
+      }
       .deal-container-{{_.id}} .right-column {
-          flex: 0 0 50%;
+          flex: 0 0 {{imagecolumntvalue.value}}%;
       }
 
      .deal-container-{{_.id}} .left-column .deal-image {
         max-width: 100%;
         height: 100%;
-        min-height: 325px;
+        min-height: {{fdImageHeightMob.value}}px;
+        border-radius: {{ImageBorderRadius.top.value}}px {{ImageBorderRadius.right.value}}px {{ImageBorderRadius.bottom.value}}px {{ImageBorderRadius.left.value}}px; 
       }
 
       .deal-container-{{_.id}} .right-column{
@@ -89,7 +93,7 @@
             text-align: center;
         {{/if}}
         {{#if fdContentAlign.horizontal '===' 'right'}}
-            text-align: right;
+            text-align: left;
         {{else if fdContentAlign.horizontal '===' 'center'}}
             text-align: center;
         {{else}}
@@ -101,19 +105,23 @@
         text-transform: uppercase;
       }
       .deal-container-{{_.id}} .right-column .featuredDeal-heading{
+        letter-spacing: -2px;
+        margin-bottom: 26px;
         font-size: {{fdTitleSizeDesk.value}}px;
         line-height: 120%;
         font-weight: 400;
         margin-top:0;
         font-family:'karla';
+        
       }
       .deal-container-{{_.id}} .right-column .featuredDeal-content{
         font-size: {{fdContentSizeDesk.value}}px;
         line-height: 120%;
         font-weight: 400;
-        max-width: 574px;
+        max-width: {{contentWidth.value}}px;
         font-family:'poppins';
         margin:0;
+        letter-spacing:0px;
       }
       .deal-container-{{_.id}} .right-column .deal-buttons{
         display: flex;
@@ -203,6 +211,10 @@
         color: {{btnTextColorHover}};
       }
 
+      .deal-container-{{_.id}} .left-column .deal-image {
+        object-fit: cover;
+      }
+
       @media screen and (min-width: 1440px){
       .deal-container-{{_.id}} .left-column .deal-image {
         min-height: 500px;
@@ -211,14 +223,27 @@
       }
 
       @media screen and (min-width: 767px){
+
+      .deal-container-2b583ce4-c8c3-4995-bf29-d3478e8610ed .left-column .left-inner-colum{
+        margin-right: 0 !important;
+      }
+          .deal-container-2b583ce4-c8c3-4995-bf29-d3478e8610ed .left-column .deal-image {
+            object-fit: cover;
+      }
+
+      .deal-container-63b29976-ca2e-4a7a-9630-359b039ec97f .left-column, .deal-container-63b29976-ca2e-4a7a-9630-359b039ec97f .right-column {
+          flex: 0 0 50%;
+      }
+
         .deal-container-{{_.id}} .left-column .left-inner-colum{
-            max-width: 480px;
-            transform: rotate(8deg);
-            position: absolute;
+            max-width: {{fdImageWidthDesk.value}}px;
+            transform: rotate({{imagedegvalue.value}}deg);
+            position: {{#if featuredDealnoposition}} absolute {{else}}  relative{{/if}};
             top: 0px;
-            max-height: 460px;
-            min-height: 460px;
+            /* max-height: 460px;
+            min-height: 460px; */
             height: 100%;
+            margin-right: {{imagerightvalue.value}}px;
        }
 
        .deal-container-{{_.id}} .left-column .left-inner-colum .left-cutout{
@@ -228,10 +253,9 @@
       .deal-container-{{_.id}} .left-column .deal-image {
         max-width: 100%;
         height: auto;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        min-height: 480px;
-        max-height: 480px;
+        border-radius: {{ImageBorderRadius.top.value}}px {{ImageBorderRadius.right.value}}px {{ImageBorderRadius.bottom.value}}px {{ImageBorderRadius.left.value}}px; 
+        min-height: {{fdImageHeightDesk.value}}px;
+        max-height: {{fdImageHeightDesk.value}}px;
       }
 
       .deal-container-{{_.id}} .left-column {
@@ -264,6 +288,14 @@
         min-height: 400px;
       }
 
+      .deal-container-2b583ce4-c8c3-4995-bf29-d3478e8610ed .right-column {
+        flex: 56% !important;
+      }
+      .deal-container-2b583ce4-c8c3-4995-bf29-d3478e8610ed .left-column {
+        flex: 44% !important;
+      }
+
+
       }
 
       @media screen and (min-width: 767px) and (max-width: 1024px) {
@@ -293,8 +325,8 @@
       }
 
         .deal-container-{{_.id}} .left-column .left-inner-colum .left-cutout .deal-image{
-        min-height: 340px;
-        max-height: 340px;
+        min-height: {{fdImageHeightTab.value}}px;
+        max-height: {{fdImageHeightTab.value}}px;
         }
 
        .deal-container-{{_.id}} .about-image-inner-colum-container{
@@ -330,12 +362,10 @@
         }
         .deal-container-{{_.id}} .right-column .featuredDeal-heading{
           font-size: {{fdTitleSizeMob.value}}px;
-          line-height: 28px;
           margin-bottom:20px;
         }
         .deal-container-{{_.id}} .right-column .featuredDeal-content{
           font-size: {{fdContentSizeMob.value}}px;
-          line-height: 24px;
           margin: 0;
         }
         .deal-container-{{_.id}} .about-image-inner-colum-container img{
@@ -344,46 +374,58 @@
         .deal-container-{{_.id}} .about-image-inner-colum-container .inner-right-column-image img{
         transform:translateY(-30px) ;
         }
+        .deal-container-63b29976-ca2e-4a7a-9630-359b039ec97f .left-column {
+              flex: 46% !important;
+        }
+
       }
 
 
-.deal-image {
-  transform: scale(1.2); /* Start zoomed in */
-  transition: transform 0.8s ease-out;
-  opacity: 0;
-}
+  .deal-image {
+    transform: scale(1.2); /* Start zoomed in */
+    transition: transform 0.8s ease-out;
+    opacity: 0;
+  }
 
-.deal-image.show {
-  transform: scale(1); /* Shrink to normal */
-  opacity: 1;
-}
+  .deal-image.show {
+    transform: scale(1); /* Shrink to normal */
+    opacity: 1;
+  }
 
 
   </style>
   
-      <div class= "deal-container-{{_.id}}" id= "deal-container"id="deal-container-{{_.id}}"
+      <div class= "deal-container-{{_.id}} notopvalue" id= "deal-container" id="deal-container-{{_.id}}"
        data-image-mobile="{{imageUrlMob.src}}"
+       image-top-value="{{imageYvalue.value}}"
        data-image-desktop="{{imageUrlDesk.src}}">
-        <div class=  "left-column {{#if featuredDeal-reverse-columns}} no-padding-column {{else}}left-column-animation {{/if}}" aria-label=  "deal-image  " title="{{imgAltText}}">
+        <div class=  "left-column {{#if featuredDeal-reverse-columns}} no-padding-column {{else}}left-column-animation {{/if}}"  title="{{imgAltText}}">
           {{#if featuredDeal-reverse-columns}}
+          {{#if featuredDeal-reverse-columns-single-image}}
+          <div class="left-column-single-image left-inner-colum {{#if non-rotated-image}}non-rotated-image-animation{{/if}}">
+            <img class="two-column-image deal-image" src= "{{imageUrlDesk.src}}" alt="{{imgAltText}}">
+          </div>
+          {{else}}
           <div class="about-image-inner-colum-container">
           <div class="inner-left-column-image">
           <img class="two-column-image" src= "{{imageUrlDesk.src}}" alt="{{imgAltText}}">
           </div>
           <div class="inner-right-column-image">
-          <img class="two-column-image" src=  "{{imageUrlDesk2.src}}  " alt="{{imgAltText}}">
+          <img class="two-column-image" src=  "{{imageUrlDesk.src}}  " alt="{{imgAltText}}">
           </div>
           </div>
+          {{/if}}
+
           {{else}}
           <div class="left-inner-colum">
-          <div class="left-cutout">
-          <img class=  "deal-image  " src=  "{{imageUrlDesk.src}}  " alt="{{imgAltText}}">
+          <div class="left-cutout {{#if leftBottomAnimation}} leftBottomAnimationclass {{else}} left-cutout-animation {{/if}}">
+          <img class="deal-image" src=  "{{imageUrlDesk.src}}  " alt="{{imgAltText}}">
           </div>
           </div>
           {{/if}}
         </div>
-        <div class=  "right-column  ">
-          <div class=  "content  ">
+        <div class="right-column">
+          <div class="content">
             <{{featuredDeal-heading-seo-tag}} class="featuredDeal-heading">{{fdTitle}}</{{featuredDeal-heading-seo-tag}}>
             <{{featuredDeal-content-seo-tag}} class="featuredDeal-content">{{{fdContent}}}</{{featuredDeal-content-seo-tag}}>
            {{#if displayControls}}
@@ -407,9 +449,9 @@
   <script>
   document.addEventListener("DOMContentLoaded", function() {
                
-      var dealContainers = document.querySelectorAll('.deal-container-{{_.id}}');
+    var dealContainers = document.querySelectorAll('.deal-container-{{_.id}}');
       
-      dealContainers.forEach(function(container) {
+    dealContainers.forEach(function(container) {
           var parent = container.closest('[data-sub-layout-container]');
           if (parent) {
               parent.classList.add("container-full-width-{{_.id}}");
@@ -432,11 +474,13 @@
       });
     }
 
-      window.addEventListener('resize', updateImage);
+    window.addEventListener('resize', updateImage);
 
-      updateImage();
+    updateImage();
 
-
+    const leftCutout = document.querySelector('.notopvalue');     
+    const imageTopValue = leftCutout.getAttribute('image-top-value') || '80%';      
+    const imageTopValueNum = parseFloat(imageTopValue);
 // JS to detect scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -452,43 +496,26 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-// Animate .deal-image with min-width and scale
-gsap.fromTo(".deal-image",
-  {
-    scale: 1.2,
-    opacity: 0,
-  },
-  {
-    scale: 1,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".deal-image",
-      start: "top 80%",
-      toggleActions: "restart none none none",
-      once: false
-    }
-  }
-);
 
 // Animate .left-cutout translateY and overflow
-gsap.fromTo(".left-cutout",
+gsap.fromTo(".deal-container-{{_.id}} .left-cutout-animation",
   {
-    y: 0,
+    x: -100,
+    y: 100, 
     onStart: () => {
-      document.querySelector('.left-cutout').style.overflow = "hidden";
+      document.querySelector('.left-cutout-animation').style.overflow = "hidden";
     }
   },
   {
-    y: -80,
-    duration: 1,
+    x: 0,
+    y: 0,
+    duration: 1.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".deal-image",
+      trigger: ".deal-container-{{_.id}} .deal-image",
       start: "top 80%",
-      toggleActions: "restart none none none",
-      once: false,
+      toggleActions: "play none none none",
+      once: true,
       onComplete: () => {
         document.querySelector('.left-cutout').style.overflow = "visible";
       }
@@ -497,7 +524,49 @@ gsap.fromTo(".left-cutout",
 );
 
 
-gsap.fromTo(".about-image-inner-colum-container",
+
+gsap.fromTo(".deal-container-{{_.id}} .left-column-single-image",
+  {
+    x: 300,
+    y: 300,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    x:0,
+    duration: 2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".deal-container-{{_.id}} .two-column-image",
+      start: "top 80%",
+      toggleActions: "restart none none none",
+      once: false,
+    }
+  }
+);
+
+gsap.fromTo(".deal-container-{{_.id}} .leftBottomAnimationclass",
+  {
+    x: -300,
+    y: 300,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    x:0,
+    duration: 2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".deal-container-{{_.id}} .deal-image",
+      start: "top 80%",
+      toggleActions: "restart none none none",
+      once: false,
+    }
+  }
+);
+
+
+gsap.fromTo(".deal-container-{{_.id}} .about-image-inner-colum-container",
   {
     opacity: 0,
     y: 50,
@@ -508,7 +577,7 @@ gsap.fromTo(".about-image-inner-colum-container",
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".about-image-inner-colum-container",
+      trigger: ".deal-container-{{_.id}} .about-image-inner-colum-container",
       start: "top 80%",
       toggleActions: "restart none none none",
       once: false,
@@ -519,8 +588,8 @@ gsap.fromTo(".about-image-inner-colum-container",
       onLeaveBack: () => {
         gsap.set('.inner-left-column-image img', { transform: "translateY(100px)" });
         gsap.set('.inner-right-column-image img', { transform: "translateY(100px)" });
-      },
-    }
+      }
+    },
   }
 );
 

@@ -1,0 +1,67 @@
+[
+  {
+    "type": "array",
+    "label": "Text",
+    "id": "videoCards",
+    "defaultCount": 4,
+    "entryLabel": "Tab Header",
+    "schema": [
+      {
+        "type": "tab",
+        "label": "Content",
+        "sections": [
+          {
+            "label": "Settings",
+            "settings": [
+              {
+                "type": "boolean",
+                "label": "Enable Video",
+                "id": "videoenabled",
+                "default": true
+              },
+              {
+                "type": "input",
+                "label": "Card Title",
+                "id": "CardTitle",
+                "default": "MACHING"
+              },
+              {
+                "type": "text",
+                "label": "Card Description",
+                "id": "Carddescription",
+                "default": "Precision machining services for custom plastic components, ensuring high-quality, accurate, and cost-effective solutions tailored to meet specific project needs."
+              },
+              {
+                "type": "input",
+                "label": "Button Text",
+                "id": "videocardbtn",
+                "default": "EXPLORE"
+              },
+              {
+                "type": "input",
+                "label": "Button Link",
+                "id": "videocardbtnlink",
+                "default": "/"
+              },
+              {
+                "type": "input",
+                "label": "Video url",
+                "id": "CardVideoUrl",
+                "default": "https://player.vimeo.com/video/1120801864?autoplay=true&loop=1&muted=1"
+              },
+                        {
+            "type": "imageManager",
+            "id": "VideoImage",
+            "label": "Card Image",
+            "default": {
+              "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/screenshot-2025-08-22-131002.png?t=1756275951",
+              "type": "IMAGE_MANAGER"
+            }
+          }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
