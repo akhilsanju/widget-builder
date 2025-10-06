@@ -5,27 +5,55 @@
     "type": "IMAGE_MANAGER"
   },
   "cardTitle": "BUY PLASTIC",
+  "cardsubTitle": "Explore the materials we offer",
+  "cardsubTitlediscription": "Explore the materials we offer",
+  "card1arrowpngcolor": "#0000",
+  "card1TitleColor": "#000000",
+  "card1TitleColorHover": "#000000",
   "cardurl2": "/",
   "cardimage2": {
     "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/fabrication.png?t=1756379452",
     "type": "IMAGE_MANAGER"
   },
-  "cardTitle2": "BUY PLASTIC",
+  "card2Title": "BUY PLASTIC",
+  "card2subTitle": "BUY PLASTIC",
+  "card2discription": "BUY PLASTIC",
+  "card2arrowpngcolor": "#0000",
+  "card2TitleColor": "#000000",
+  "card2TitleColorHover": "#fff",
   "cardurl3": "/",
   "cardimage3": {
     "src": "https://cdn11.bigcommerce.com/s-4ysbhsn7sv/images/stencil/original/image-manager/resources.png?t=1756379492",
     "type": "IMAGE_MANAGER"
   },
-  "cardTitle3": "BUY PLASTIC",
-  "cardTitleColor": "#000000",
-  "cardTitle2Color": "#000000",
-  "cardTitle3Color": "#000000",
-  "font_size": {
-    "value": 24,
+  "card3arrowpngcolor": "#0000",
+  "card3Title": "RESOURCES",
+  "card3subTitle": "Explore insights, tools, and expertise.",
+  "card3discription": "Explore insights, tools, and expertise.",
+  "card3TitleColor": "#000000",
+  "card3TitleColoHover": "#000000",
+  "font_size_text": {
+    "value": 30,
     "type": "px"
   },
-  "cardsubTitle": "Explore the materials we offer",
-  "cardsubTitle2": "Check out our capabilities and processes.",
-  "cardsubTitle3": "Explore insights, tools, and expertise.",
-  "cardsubTitleSub": "#000000"
+  "Title_font_size_texTab": {
+    "value": 30,
+    "type": "px"
+  },
+  "title_font_size_text_mob": {
+    "value": 30,
+    "type": "px"
+  },
+  "font_size_subtext": {
+    "value": 30,
+    "type": "px"
+  },
+  "font_size_subtextTab": {
+    "value": 16,
+    "type": "px"
+  },
+  "font_size_subtextMob": {
+    "value": 14,
+    "type": "px"
+  }
 }
